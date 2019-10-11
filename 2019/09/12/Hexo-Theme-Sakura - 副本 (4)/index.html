@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Hexo-Theme-Sakura | 可爱多</title>
+  <title itemprop="name">【论文】Urban Traffic Prediction from Spatio-Temporal Data Using Deep Meta Learning. | 可爱多</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -393,7 +393,7 @@
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      Hexo-Theme-Sakura</h1>
+      【论文】Urban Traffic Prediction from Spatio-Temporal Data Using Deep Meta Learning.</h1>
       <p class="entry-census">
         <span>
           <a href="hojun.cn">
@@ -405,7 +405,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2018-12-12<span class="bull">
+        2019-9-12<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -419,290 +419,23 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p>hexo-theme-sakura主题 <a href="https://github.com/honjun/hexo-theme-sakura/blob/master/README.md" target="_blank" rel="noopener">English document</a></p>
-<p>基于WordPress主题<a href="https://github.com/mashirozx/Sakura/" target="_blank" rel="noopener">Sakura</a>修改成Hexo的主题。</p>
-<p><a href="https://sakura.hojun.cn" target="_blank" rel="noopener">demo预览</a></p>
-<p>正在开发中……</p>
-<p><img src="https://wx3.sinaimg.cn/large/006bYVyvly1g069tuf42oj312w0m8ndq.jpg" alt></p>
-<h2 id="交流群"><a href="#交流群" class="headerlink" title="交流群"></a>交流群</h2><p>若你是使用者，加群QQ: 801511924</p>
-<p>若你是创作者，加群QQ: 194472590</p>
-<h2 id="主题特性"><a href="#主题特性" class="headerlink" title="主题特性"></a>主题特性</h2><ul>
-<li>首页大屏视频</li>
-<li>首页随机封面</li>
-<li>图片懒加载</li>
-<li>valine评论</li>
-<li>fancy-box相册</li>
-<li>pjax支持，音乐不间断</li>
-<li>aplayer音乐播放器</li>
-<li>多级导航菜单（按现在大部分hexo主题来说，这也算是个特性了）</li>
-</ul>
-<h2 id="赞赏作者"><a href="#赞赏作者" class="headerlink" title="赞赏作者"></a>赞赏作者</h2><p>如果喜欢hexo-theme-sakura主题，可以考虑资助一下哦~非常感激！</p>
-<p><a href="https://www.paypal.me/hojuncn" target="_blank" rel="noopener">paypal</a> | <a href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/AliPayQR.jpg" target="_blank" rel="noopener">Alipay 支付宝</a> | <a href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/WeChanSQ.jpg" target="_blank" rel="noopener">WeChat Pay 微信支付</a></p>
-<h2 id="未完善的使用教程"><a href="#未完善的使用教程" class="headerlink" title="未完善的使用教程"></a>未完善的使用教程</h2><p>那啥？老实说我目前也不是很有条理233333333~</p>
-<h2 id="1、主题下载安装"><a href="#1、主题下载安装" class="headerlink" title="1、主题下载安装"></a>1、主题下载安装</h2><p><a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" rel="noopener">hexo-theme-sakura</a>建议下载压缩包格式，因为除了主题内容还有些source的配置对新手来说比较太麻烦，直接下载解压就省去这些麻烦咯。</p>
-<p>下载好后解压到博客根目录（不是主题目录哦，重复的选择替换）。接着在命令行（cmd、bash）运行<code>npm i</code>安装依赖。</p>
-<h2 id="2、主题配置"><a href="#2、主题配置" class="headerlink" title="2、主题配置"></a>2、主题配置</h2><h3 id="博客根目录下的-config配置"><a href="#博客根目录下的-config配置" class="headerlink" title="博客根目录下的_config配置"></a>博客根目录下的_config配置</h3><p>站点</p>
-<pre><code class="yml"># Site
-title: 你的站点名
-subtitle:
-description: 站点简介
-keywords:
-author: 作者名
-language: zh-cn
-timezone:</code></pre>
-<p>部署</p>
-<pre><code class="yml">deploy:
-  type: git
-  repo: 
-    github: 你的github仓库地址
-    # coding: 你的coding仓库地址
-  branch: master</code></pre>
-<p>备份 （使用hexo b发布备份到远程仓库）</p>
-<pre><code class="yml">backup:
-  type: git
-  message: backup my blog of https://honjun.github.io/
-  repository:
-    # 你的github仓库地址,备份分支名  （建议新建backup分支）
-    github: https://github.com/honjun/honjun.github.io.git,backup
-    # coding: https://git.coding.net/hojun/hojun.git,backup
-</code></pre>
-<h3 id="主题目录下的-config配置"><a href="#主题目录下的-config配置" class="headerlink" title="主题目录下的_config配置"></a>主题目录下的_config配置</h3><p>其中标明【改】的是需要修改部门，标明【选】是可改可不改，标明【非】是不用改的部分</p>
-<pre><code class="yml"># site name
-# 站点名 【改】
-prefixName: さくら荘その
-siteName: hojun
-
-# favicon and site master avatar
-# 站点的favicon和头像 输入图片路径（下面的配置是都是cdn的相对路径，没有cdn请填写完整路径，建议使用jsdeliver搭建一个cdn啦，先去下载我的cdn替换下图片就行了，简单方便~）【改】
-favicon: /images/favicon.ico
-avatar: /img/custom/avatar.jpg
-
-# 站点url 【改】
-url: https://sakura.hojun.cn
-
-# 站点介绍（或者说是个人签名）【改】
-description: Live your life with passion! With some drive!
-
-# 站点cdn，没有就为空 【改】  若是cdn为空，一些图片地址就要填完整地址了，比如之前avatar就要填https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg
-cdn: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6
-
-# 开启pjax 【选】
-pjax: 1
-
-# 站点首页的公告信息 【改】
-notice: hexo-Sakura主题已经开源，目前正在开发中...
-
-# 懒加载的加载中图片 【选】
-lazyloadImg: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg
-
-# 站点菜单配置 【选】
-menus:
-  首页: { path: /, fa: fa-fort-awesome faa-shake }
-  归档: { path: /archives, fa: fa-archive faa-shake, submenus: { 
-    技术: {path: /categories/技术/, fa: fa-code }, 
-    生活: {path: /categories/生活/, fa: fa-file-text-o }, 
-    资源: {path: /categories/资源/, fa: fa-cloud-download }, 
-    随想: {path: /categories/随想/, fa: fa-commenting-o },
-    转载: {path: /categories/转载/, fa: fa-book }
-  } }
-  清单: { path: javascript:;, fa: fa-list-ul faa-vertical, submenus: { 
-    书单: {path: /tags/悦读/, fa: fa-th-list faa-bounce }, 
-    番组: {path: /bangumi/, fa: fa-film faa-vertical }, 
-    歌单: {path: /music/, fa: fa-headphones },
-    图集: {path: /tags/图集/, fa: fa-photo }
-  } }
-  留言板: { path: /comment/, fa: fa-pencil-square-o faa-tada }
-  友人帐: { path: /links/, fa: fa-link faa-shake }
-  赞赏: { path: /donate/, fa: fa-heart faa-pulse }
-  关于: { path: /, fa: fa-leaf faa-wrench , submenus: { 
-    我？: {path: /about/, fa: fa-meetup}, 
-    主题: {path: /theme-sakura/, fa: iconfont icon-sakura },
-    Lab: {path: /lab/, fa: fa-cogs },
-  } }
-  客户端: { path: /client/, fa: fa-android faa-vertical }
-  RSS: { path: /atom.xml, fa: fa-rss faa-pulse }
-
-# Home page sort type: -1: newer first，1: older first. 【非】
-homePageSortType: -1
-
-# Home page article shown number) 【非】
-homeArticleShown: 10
-
-# 背景图片 【选】
-bgn: 8
-
-# startdash面板 url, title, desc img 【改】
-startdash: 
-  - {url: /theme-sakura/, title: Sakura, desc: 本站 hexo 主题, img: /img/startdash/sakura.md.png}
-  - {url: http://space.bilibili.com/271849279, title: Bilibili, desc: 博主的b站视频, img: /img/startdash/bilibili.jpg}
-  - {url: /, title: hojun的万事屋, desc: 技术服务, img: /img/startdash/wangshiwu.jpg}
-
-
-# your site build time or founded date
-# 你的站点建立日期 【改】
-siteBuildingTime: 07/17/2018
-
-
-# 社交按钮(social)  url, img PC端配置 【改】
-social:
-  github: {url: http://github.com/honjun, img: /img/social/github.png}
-  sina: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/sina.png}
-  wangyiyun: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/wangyiyun.png}
-  zhihu: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/zhihu.png}
-  email: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/email.svg}
-  wechat: {url: /#, qrcode: /img/custom/wechat.jpg, img: /img/social/wechat.png}
-
-# 社交按钮(msocial)  url, img 移动端配置 【改】
-msocial:
-  github: {url: http://github.com/honjun, fa: fa-github, color: 333}
-  weibo: {url: http://weibo.com/mashirozx?is_all=1, fa: fa-weibo, color: dd4b39}
-  qq: {url: https://wpa.qq.com/msgrd?v=3&amp;uin=954655431&amp;site=qq&amp;menu=yes, fa: fa-qq, color: 25c6fe}
-
-# 赞赏二维码（其中wechatSQ是赞赏单页面的赞赏码图片）【改】
-donate:
-  alipay: /img/custom/donate/AliPayQR.jpg
-  wechat: /img/custom/donate/WeChanQR.jpg
-  wechatSQ: /img/custom/donate/WeChanSQ.jpg
-
-# 首页视频地址为https://cdn.jsdelivr.net/gh/honjun/hojun@1.2/Unbroken.mp4，配置如下 【改】
-movies:
-  url: https://cdn.jsdelivr.net/gh/honjun/hojun@1.2
-  # 多个视频用逗号隔开，随机获取。支持的格式目前已知MP4,Flv。其他的可以试下，不保证有用
-  name: Unbroken.mp4
-
-# 左下角aplayer播放器配置 主要改id和server这两项，修改详见[aplayer文档] 【改】
-aplayer: 
-  id: 2660651585
-  server: netease
-  type: playlist
-  fixed: true
-  mini: false
-  autoplay: false
-  loop: all
-  order: random
-  preload: auto
-  volume: 0.7
-  mutex: true
-
-# Valine评论配置【改】
-valine: true
-v_appId: GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz
-v_appKey: mgOpfzbkHYqU92CV4IDlAUHQ</code></pre>
-<h2 id="分类页和标签页配置"><a href="#分类页和标签页配置" class="headerlink" title="分类页和标签页配置"></a>分类页和标签页配置</h2><h3 id="分类页"><a href="#分类页" class="headerlink" title="分类页"></a>分类页</h3><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b0gucy9j31060jih76.jpg" alt></p>
-<h3 id="标签页"><a href="#标签页" class="headerlink" title="标签页"></a>标签页</h3><p><img src="https://wx2.sinaimg.cn/large/006bYVyvly1g07azb2399j31040jgazs.jpg" alt></p>
-<p>配置项在\themes\Sakura\languages\zh-cn.yml里。新增一个分类或标签最好加下哦，当然嫌麻烦可以直接使用一张默认图片（可以改主题或者直接把404图片替换下，征求下意见要不要给这个在配置文件中加个开关，可以issue或群里提出来），现在是没设置的话会使用那种倒立小狗404哦。</p>
-<pre><code class="yml">#category
-# 按分类名创建
-技术:
-    #中文标题
-    zh: 野生技术协会 
-    # 英文标题
-    en: Geek – Only for Love
-    # 封面图片
-    img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/coding.jpg
-生活:
-    zh: 生活
-    en: live
-    img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/writing.jpg
-
-#tag
-# 标签名即是标题
-悦读:
-    # 封面图片
-    img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/reading.jpg</code></pre>
-<h2 id="单页面封面配置"><a href="#单页面封面配置" class="headerlink" title="单页面封面配置"></a>单页面封面配置</h2><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b1pi619j31080jge4u.jpg" alt><br>如留言板页面页面，位于source下的comment下，打开index.md如下：</p>
-<pre><code class="md">---
-title: comment
-date: 2018-12-20 23:13:48
-keywords: 留言板
-description: 
-comments: true
-# 在这里配置单页面头部图片，自定义替换哦~
-photos: https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg
----</code></pre>
-<h2 id="单页面配置"><a href="#单页面配置" class="headerlink" title="单页面配置"></a>单页面配置</h2><h3 id="番组计划页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"><a href="#番组计划页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）" class="headerlink" title="番组计划页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"></a>番组计划页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）</h3><p><img src="https://wx2.sinaimg.cn/large/006bYVyvly1g07b2gyx60j31090jjahj.jpg" alt></p>
-<pre><code class="yml">---
-layout: bangumi
-title: bangumi
-comments: false
-date: 2019-02-10 21:32:48
-keywords:
-description:
-bangumis:
-  # 番组图片
-  - img: https://lain.bgm.tv/pic/cover/l/0e/1e/218971_2y351.jpg
-  # 番组名
-    title: 朝花夕誓——于离别之朝束起约定之花
-  # 追番状态 （追番ing/已追完）
-    status: 已追完
-  # 追番进度
-    progress: 100
-  # 番剧日文名称
-    jp: さよならの朝に約束の花をかざろう
-  # 放送时间
-    time: 放送时间: 2018-02-24 SUN.
-  # 番剧介绍
-    desc:  住在远离尘嚣的土地，一边将每天的事情编织成名为希比欧的布，一边静静生活的伊欧夫人民。在15岁左右外表就停止成长，拥有数百年寿命的他们，被称为“离别的一族”，并被视为活着的传说。没有双亲的伊欧夫少女玛奇亚，过着被伙伴包围的平稳日子，却总感觉“孤身一人”。他们的这种日常，一瞬间就崩溃消失。追求伊欧夫的长寿之血，梅萨蒂军乘坐着名为雷纳特的古代兽发动了进攻。在绝望与混乱之中，伊欧夫的第一美女蕾莉亚被梅萨蒂带走，而玛奇亚暗恋的少年克里姆也失踪了。玛奇亚虽然总算逃脱了，却失去了伙伴和归去之地……。
-  - img: https://lain.bgm.tv/pic/cover/l/0e/1e/218971_2y351.jpg
-    title: 朝花夕誓——于离别之朝束起约定之花
-    status: 已追完
-    progress: 50
-    jp: さよならの朝に約束の花をかざろう
-    time: 放送时间: 2018-02-24 SUN.
-    desc: 住在远离尘嚣的土地，一边将每天的事情编织成名为希比欧的布，一边静静生活的伊欧夫人民。在15岁左右外表就停止成长，拥有数百年寿命的他们，被称为“离别的一族”，并被视为活着的传说。没有双亲的伊欧夫少女玛奇亚，过着被伙伴包围的平稳日子，却总感觉“孤身一人”。他们的这种日常，一瞬间就崩溃消失。追求伊欧夫的长寿之血，梅萨蒂军乘坐着名为雷纳特的古代兽发动了进攻。在绝望与混乱之中，伊欧夫的第一美女蕾莉亚被梅萨蒂带走，而玛奇亚暗恋的少年克里姆也失踪了。玛奇亚虽然总算逃脱了，却失去了伙伴和归去之地……。
----</code></pre>
-<h3 id="友链页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"><a href="#友链页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）" class="headerlink" title="友链页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"></a>友链页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）</h3><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b39tleej31080jhjv1.jpg" alt></p>
-<pre><code class="yml">---
-layout: links
-title: links
-# 创建日期，可以改下
-date: 2018-12-19 23:11:06 
-# 图片上的标题，自定义修改
-keywords: 友人帐 
-description: 
-# true/false 开启/关闭评论
-comments: true 
-# 页面头部图片，自定义修改
-photos: https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg 
-# 友链配置
-links: 
-  # 类型分组
-  - group: 个人项目
-    # 类型简介
-    desc: 充分说明这家伙是条咸鱼 &lt; (￣︶￣)&gt;
-    items:
-    # 友链链接
-    - url: https://shino.cc/fgvf
-    # 友链头像
-      img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
-    # 友链站点名
-      name: Google
-    # 友链介绍  下面雷同
-      desc: Google 镜像
-    - url: https://shino.cc/fgvf
-      img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
-      name: Google
-      desc: Google 镜像
-  # 类型分组...
-  - group: 小伙伴们
-    desc: 欢迎交换友链 ꉂ(ˊᗜˋ)
-    items:
-    - url: https://shino.cc/fgvf
-      img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
-      name: Google
-      desc: Google 镜像
-    - url: https://shino.cc/fgvf
-      img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
-      name: Google
-      desc: Google 镜像
----</code></pre>
-<h2 id="写文章配置"><a href="#写文章配置" class="headerlink" title="写文章配置"></a>写文章配置</h2><p>主题集成了个人插件hexo-tag-bili和hexo-tag-fancybox_img。其中hexo-tag-bili用来在文章或单页面中插入B站外链视频，使用语法如下：</p>
-<pre><code class="md">{% bili video_id [page] %}</code></pre>
-<p>详细使用教程详见<a href="https://github.com/honjun/hexo-tag-bili/blob/master/README-zh_cn.md" target="_blank" rel="noopener">hexo-tag-bili</a>。</p>
-<p>hexo-tag-fancybox_img用来在文章或单页面中图片，使用语法如下：</p>
-<pre><code class="md">{% fb_img src [caption] %}</code></pre>
-<p>详细使用教程详见<a href="https://github.com/honjun/hexo-tag-fancybox_img/blob/master/README-zh_cn.md" target="_blank" rel="noopener">hexo-tag-fancybox_img</a></p>
-<h2 id="还有啥，一时想不起来……"><a href="#还有啥，一时想不起来……" class="headerlink" title="还有啥，一时想不起来……"></a>还有啥，一时想不起来……</h2><p>To be continued…</p>
+          <p>城市交通预测是城市计算领域中一个非常重要的研究课题，准确的交通预测可以帮助我们更好地理解城市交通，给交通系统的改进提供思路，同时也能对民众提供及时的城市交通预警。然而，准确的城市交通预测需解决以下两个挑战：<br>1) 交通数据间复杂的时空相关性，即一个地点的交通状况会影响其未来一段时间内的交通，也会影响其周围区域的交通。如图2.1（a）所示，当地点S3发生交通事故时，可能导致它相邻的地点S1,S2,S4堵车；当地点S4有重大事件发生时（例如，演唱会）,将有大量的人群涌向S4，从而影响S4未来一段时间的交通状态。<br>2) 不同地点间，数据的时空相关性是多样的，并且这样的相关性取决于地理信息，如地点周围的兴趣点，路网结构等。如图2.1（b）区域R1、R2和R3拥有不同的POI分布和路网结构。其中，R1、R3有较多的办公楼，表示工作区，而R2有较多的住宅，表示一个住宅区。如图2.1（c）所示，这些区域的POI分布、路网结构不同，导致，R1、R2、R3三个区域的流入人流量趋势各不相同。但同时，由于R1与R3的POI分布较相似，它们的流量趋势呈现出一定的相似性。因此，交通预测的核心挑战就是建模交通数据中的时空相关性和地理信息对时空相关性的影响。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p12" alt="8fd882e84772d1bb6358feb9b46e8f72.png"></p>
+<p>▲图2.1 城市交通预测的挑战</p>
+<p><strong>解决方案</strong>为了能在一般化的非规则空间结构上（如路网）预测未来交通，我们首先需要将交通的关联模式抽象成图结构。其中，每个点表示的地图上的地点，而边表示的是两个地点间的关联。接下来，我们提出参数生成的方式，来建模地理信息对时空相关性的影响。如图2.2所示，我们用一个模型从节点的地理特征中，学习节点和边的特性，而后用这些特性，进而学习时间、空间的关联性模型。最后用学到的模型进行交通预测。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p13" alt="c32abaf9204c4422df25a096af38e3aa.png"></p>
+<p>▲图2.2为此，我们引入sequence-to-sequence架构，如图2.3所示，其中包含：</p>
+<ol>
+<li>循环神经网络（RNN），将交通数据编码映射到高维的空间，学习高维特征。</li>
+<li>元知识学习器（Meta-Knowledge Learner）。如图2.3（b）我们用两个元知识学习器，分别从点和边的地理信息中学习点元知识（Node meta knowledge,NMK）和边元知识（Edge metaknowledge，EMK），用于生成模型的参数。</li>
+<li>基于元学习的图注意力网络（Meta-GAT）。该网络接收RNN的输出，用于建模多样的空间关联。由于在图结构中，不同的边所描述的空间相关性取决于这条边的特征属性，所以，我们用一个元学习器从地理信息的元知识中学习GAT模型（图2.3(c)）。</li>
+<li>基于元学习的循环神经网络（Meta-RNN）。该网络接收Meta-GAT的输出，用于建模多样的时间关联性。我们从每个节点地理信息的元知识中学习RNN的参数，来对多样的时间相关性建模（图2.3(d)）。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p11" alt="7f7da436606e1fb5602a56f5beba2a27.png"></li>
+</ol>
+<p>▲图2.3</p>
+<p>实验结果最后，我们使用出租车流量预测和道路车辆速度预测这两个真实的任务来验证模型的性能。如表2.4所示，从MAE和RMSE这两个指标上看，我们的模型在使用更少参数的情况下，都要优于之前最好的结果。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p14" alt="e127a8872075fa81de854f2f0f50bc17.png"></p>
+<p>▲表2.4同时我们测试了各个模块的提升效果。如图2.5所示，在基准模型基础上，每加上一个模块，模型都能取得更好的结果。应用上所有模块后，模型的预测准确率最高。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p16" alt="5a2c8237c966df6d3d6b20a55e674fe6.png"></p>
+<p>▲图2.5</p>
+<p>为了进一步说明深度元学习的有效性，我们对模型所学习到的点元知识进行评估。对于每个节点，其元知识是表征该节点特性的嵌入向量。一组好的嵌入向量需要能表征节点之间的相似度。为此，我们在节点的嵌入空间下（Embedding space），找到每个节点的k邻近节点。然后，用交通数据的测试集计算每个节点和其k临近节点的平均相似度。这里我们选用两种序列相似度指标：Pearson相关性（CORR）和一阶时间相关性（CORT），这两个值越大，表示相似度越高。如图2.6所示，用元学习方法学到的嵌入空间，每个节点与其周围节点的相似度明显高于在非元学习方法的嵌入空间下节点与其邻近节点的相似度。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p17" alt="d2ed710b94f69bdf0b9786dda0f720d7.png"><br>                                    图2.6</p>
+<p>最后，我们用一个实例来展现元学习的优势。在出租车流量预测任务中，我们选取3个典型的区域：永泰园、中关村和三元桥，分别对应于住宅区、办公区和交通枢纽。然后，我们在嵌入空间下，分别找到它们最近的节点，并且将所有节点所对应的交通流量画在图上。图2.7(a)展现的是非元学习下，每个区域和它在嵌入空间下相邻区域的流量比较。可以发现，在该嵌入空间下，节点和其相邻点并不相似。而图2.7(b)展现的是元学习下的结果，对于每个区域，其嵌入空间下相邻的区域都跟它有非常相似的流量趋势，进而说明了元学习方法的有效性。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p15" alt="16b712cbbf05267e0b86b0debc14fe96.png"></p>
+<p>图2.7</p>
 
         </div>
         <!-- .entry-content -->
@@ -730,30 +463,13 @@ links:
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (10)/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                Hexo-Theme-Sakura</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
         
           
-            <div class="post-nepre half next">
+            <div class="post-nepre full next">
           
-            <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (13)/" rel="next">
+            <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (2)/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=殷桃小丸子&step_word=&hs=0&pn=8&spn=0&di=84370&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=1765585983%2C2390985156&os=1841639899%2C3518200939&simid=3506453138%2C450913731&adpicid=0&lpn=0&ln=815&fr=&fmq=1570799401027_R&fm=result&ic=&s=undefined&hd=&latest=&copyright=&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160903%2Fbf2e248649f94a1db74c2d282b68a0bd_th.jpeg&fromurl=ippr_z2C%24qAzdH3FAzdH3F4p_z%26e3Bf5i7_z%26e3Bv54AzdH3Fda8malanAzdH3Fg9m0c98ddd_z%26e3Bfip4s&gsm=&rpstart=0&rpnum=0&islist=&querylist=&force=undefined" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=殷桃小丸子&step_word=&hs=0&pn=8&spn=0&di=84370&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=1765585983%2C2390985156&os=1841639899%2C3518200939&simid=3506453138%2C450913731&adpicid=0&lpn=0&ln=815&fr=&fmq=1570799401027_R&fm=result&ic=&s=undefined&hd=&latest=&copyright=&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160903%2Fbf2e248649f94a1db74c2d282b68a0bd_th.jpeg&fromurl=ippr_z2C%24qAzdH3FAzdH3F4p_z%26e3Bf5i7_z%26e3Bv54AzdH3Fda8malanAzdH3Fg9m0c98ddd_z%26e3Bfip4s&gsm=&rpstart=0&rpnum=0&islist=&querylist=&force=undefined">
               </div>
               <span class="label">
               Next Post</span>
