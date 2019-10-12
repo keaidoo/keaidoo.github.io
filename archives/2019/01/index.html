@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">【论文】Urban Traffic Prediction from Spatio-Temporal Data Using Deep Meta Learning. | 可爱多</title>
+  <title itemprop="name">archive_a: 2019/1 | 可爱多</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -383,138 +383,159 @@
   </div>
 </header>
 
-      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
-<div class="pattern-center-blank"></div>
-
-  <div class="pattern-center single-center">
-    <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-    </div>
-    <header class="pattern-header single-header">
-      <h1 class="entry-title">
-      【论文】Urban Traffic Prediction from Spatio-Temporal Data Using Deep Meta Learning.</h1>
-      <p class="entry-census">
-        <span>
-          <a href="hojun.cn">
-            <img src="https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg">
-          </a>
-        </span>
-        <span>
-          <a href="hojun.cn">hojun</a>
-        </span>
-        <span class="bull">
-        ·</span>
-        2019-9-12<span class="bull">
-        ·</span>
-      <span id="busuanzi_value_page_pv"></span>次阅读</p>
-    </header>
-  </div>
-
+      <div class="blank" style="padding-top: 75px;">
+</div>
 <div id="content" class="site-content">
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
-      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <div class="toc"></div>
-        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
-        
-        <div class="entry-content">
-          <p>城市交通预测是城市计算领域中一个非常重要的研究课题，准确的交通预测可以帮助我们更好地理解城市交通，给交通系统的改进提供思路，同时也能对民众提供及时的城市交通预警。然而，准确的城市交通预测需解决以下两个挑战：<br>1) 交通数据间复杂的时空相关性，即一个地点的交通状况会影响其未来一段时间内的交通，也会影响其周围区域的交通。如图2.1（a）所示，当地点S3发生交通事故时，可能导致它相邻的地点S1,S2,S4堵车；当地点S4有重大事件发生时（例如，演唱会）,将有大量的人群涌向S4，从而影响S4未来一段时间的交通状态。<br>2) 不同地点间，数据的时空相关性是多样的，并且这样的相关性取决于地理信息，如地点周围的兴趣点，路网结构等。如图2.1（b）区域R1、R2和R3拥有不同的POI分布和路网结构。其中，R1、R3有较多的办公楼，表示工作区，而R2有较多的住宅，表示一个住宅区。如图2.1（c）所示，这些区域的POI分布、路网结构不同，导致，R1、R2、R3三个区域的流入人流量趋势各不相同。但同时，由于R1与R3的POI分布较相似，它们的流量趋势呈现出一定的相似性。因此，交通预测的核心挑战就是建模交通数据中的时空相关性和地理信息对时空相关性的影响。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p12" alt="8fd882e84772d1bb6358feb9b46e8f72.png"></p>
-<p>▲图2.1 城市交通预测的挑战</p>
-<p><strong>解决方案</strong>为了能在一般化的非规则空间结构上（如路网）预测未来交通，我们首先需要将交通的关联模式抽象成图结构。其中，每个点表示的地图上的地点，而边表示的是两个地点间的关联。接下来，我们提出参数生成的方式，来建模地理信息对时空相关性的影响。如图2.2所示，我们用一个模型从节点的地理特征中，学习节点和边的特性，而后用这些特性，进而学习时间、空间的关联性模型。最后用学到的模型进行交通预测。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p13" alt="c32abaf9204c4422df25a096af38e3aa.png"></p>
-<p>▲图2.2为此，我们引入sequence-to-sequence架构，如图2.3所示，其中包含：</p>
-<ol>
-<li>循环神经网络（RNN），将交通数据编码映射到高维的空间，学习高维特征。</li>
-<li>元知识学习器（Meta-Knowledge Learner）。如图2.3（b）我们用两个元知识学习器，分别从点和边的地理信息中学习点元知识（Node meta knowledge,NMK）和边元知识（Edge metaknowledge，EMK），用于生成模型的参数。</li>
-<li>基于元学习的图注意力网络（Meta-GAT）。该网络接收RNN的输出，用于建模多样的空间关联。由于在图结构中，不同的边所描述的空间相关性取决于这条边的特征属性，所以，我们用一个元学习器从地理信息的元知识中学习GAT模型（图2.3(c)）。</li>
-<li>基于元学习的循环神经网络（Meta-RNN）。该网络接收Meta-GAT的输出，用于建模多样的时间关联性。我们从每个节点地理信息的元知识中学习RNN的参数，来对多样的时间相关性建模（图2.3(d)）。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p11" alt="7f7da436606e1fb5602a56f5beba2a27.png"></li>
-</ol>
-<p>▲图2.3</p>
-<p>实验结果最后，我们使用出租车流量预测和道路车辆速度预测这两个真实的任务来验证模型的性能。如表2.4所示，从MAE和RMSE这两个指标上看，我们的模型在使用更少参数的情况下，都要优于之前最好的结果。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p14" alt="e127a8872075fa81de854f2f0f50bc17.png"></p>
-<p>▲表2.4同时我们测试了各个模块的提升效果。如图2.5所示，在基准模型基础上，每加上一个模块，模型都能取得更好的结果。应用上所有模块后，模型的预测准确率最高。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p16" alt="5a2c8237c966df6d3d6b20a55e674fe6.png"></p>
-<p>▲图2.5</p>
-<p>为了进一步说明深度元学习的有效性，我们对模型所学习到的点元知识进行评估。对于每个节点，其元知识是表征该节点特性的嵌入向量。一组好的嵌入向量需要能表征节点之间的相似度。为此，我们在节点的嵌入空间下（Embedding space），找到每个节点的k邻近节点。然后，用交通数据的测试集计算每个节点和其k临近节点的平均相似度。这里我们选用两种序列相似度指标：Pearson相关性（CORR）和一阶时间相关性（CORT），这两个值越大，表示相似度越高。如图2.6所示，用元学习方法学到的嵌入空间，每个节点与其周围节点的相似度明显高于在非元学习方法的嵌入空间下节点与其邻近节点的相似度。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p17" alt="d2ed710b94f69bdf0b9786dda0f720d7.png"><br>                                    图2.6</p>
-<p>最后，我们用一个实例来展现元学习的优势。在出租车流量预测任务中，我们选取3个典型的区域：永泰园、中关村和三元桥，分别对应于住宅区、办公区和交通枢纽。然后，我们在嵌入空间下，分别找到它们最近的节点，并且将所有节点所对应的交通流量画在图上。图2.7(a)展现的是非元学习下，每个区域和它在嵌入空间下相邻区域的流量比较。可以发现，在该嵌入空间下，节点和其相邻点并不相似。而图2.7(b)展现的是元学习下的结果，对于每个区域，其嵌入空间下相邻的区域都跟它有非常相似的流量趋势，进而说明了元学习方法的有效性。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p15" alt="16b712cbbf05267e0b86b0debc14fe96.png"></p>
-<p>图2.7</p>
-
-        </div>
-        <!-- .entry-content -->
-        <div class="single-reward">
-          <div class="reward-open">赏<div class="reward-main">
-              <ul class="reward-row">
-                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/AliPayQR.jpg"></li>
-                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/WeChanQR.jpg"></li>
-              </ul>
+  <div id="main">
+    <header class="page-header">
+      <h1 class="cat-title">
+      归档</h1>
+      <span class="cat-des">
+        <p>
+        Archives</p>
+      </span>
+    </header>
+    <div id="main-part">
+      <article class="art">
+        <div class="art-main">
+          <div class="art-content">
+            <div id="archives">
+              <p style="text-align:right;">
+                [<span id="al_expand_collapse" style="cursor: s-resize;">
+                全部展开/收缩</span>
+              ]</p>
+              
+              
+              
+              
+              
+                
+                <h3 class="al_year">2019年</h3>
+              
+              
+                
+                <ul class="al_mon_list">
+                  <li class="al_li">
+                    <span class="al_mon" style="cursor: s-resize;">
+                      09月(<span id="post-num">
+                      3</span>
+                    篇文章)</span>
+                    <ul class="al_post_list" style="">
+              
+                      <li>
+                        <a href="/2019/09/12/论文/">
+                          <span style="color:#0bf;">
+                          12日22:16:01</span>
+                          【论文】Urban Traffic Prediction from Spatio-Temporal Data Using Deep Meta Learning.
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              
+              
+              
+              
+              
+              
+                
+                <ul class="al_mon_list">
+                  <li class="al_li">
+                    <span class="al_mon" style="cursor: s-resize;">
+                      06月(<span id="post-num">
+                      3</span>
+                    篇文章)</span>
+                    <ul class="al_post_list" style="">
+              
+                      <li>
+                        <a href="/2019/06/04/GNN学习 【01】——DGL/">
+                          <span style="color:#0bf;">
+                          04日16:11:01</span>
+                          GNN学习 【01】——DGL
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              
+              
+              
+              
+              
+              
+                
+                <ul class="al_mon_list">
+                  <li class="al_li">
+                    <span class="al_mon" style="cursor: s-resize;">
+                      01月(<span id="post-num">
+                      3</span>
+                    篇文章)</span>
+                    <ul class="al_post_list" style="">
+              
+                      <li>
+                        <a href="/2019/01/19/使用Pycharm将数据库文件导入到MongoDB/">
+                          <span style="color:#0bf;">
+                          19日22:01:01</span>
+                          使用Pycharm将数据库文件导入到MongoDB
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              
+              
+              
+              
+              
+                
+                <h3 class="al_year">2018年</h3>
+              
+              
+                
+                <ul class="al_mon_list">
+                  <li class="al_li">
+                    <span class="al_mon" style="cursor: s-resize;">
+                      12月(<span id="post-num">
+                      3</span>
+                    篇文章)</span>
+                    <ul class="al_post_list" style="">
+              
+                      <li>
+                        <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (2)/">
+                          <span style="color:#0bf;">
+                          12日22:16:01</span>
+                          Hexo-Theme-Sakura
+                        </a>
+                      </li>
+                      
+              
+              
+              
+              
+              
+                      <li>
+                        <a href="/2018/12/12/Hexo-Theme-Sakura/">
+                          <span style="color:#0bf;">
+                          12日22:16:01</span>
+                          Hexo-Theme-Sakura
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              
+              
             </div>
           </div>
         </div>
-        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-        <footer class="post-footer">
-          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-          <div class="post-tags">
-          </div>
-          <div class="post-share">
-            <div class="social-share sharehidden share-component"></div>
-            <i class="iconfont show-share icon-forward"></i>
-          </div>
-        </footer><!-- .entry-footer -->
       </article>
-      <!-- #post-## -->
-      <div class="toc" style="background: none;"></div>
-      <section class="post-squares nextprev">
-        
-        
-          
-            <div class="post-nepre full next">
-          
-            <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (2)/" rel="next">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/170605/130458-149663909840b3.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/170605/130458-149663909840b3.jpg">
-              </div>
-              <span class="label">
-              Next Post</span>
-              <div class="info">
-                <h3>
-                Hexo-Theme-Sakura</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-      </section>
-      
-<div id="vcomments"></div>
-<script>
-  window.onload = function(){
-      var valine = new Valine();
-      valine.init({
-        el: '#vcomments',
-        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
-        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
-        path: window.location.pathname,
-        placeholder: "你是我一生只会遇见一次的惊喜 ..."
-      })
-  }
-</script>
-
-      <section class="author-profile">
-        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="hojun.cn" class="profile gravatar"><img src="https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg" itemprop="image" alt="hojun" height="70" width="70"></a>
-          <div class="meta">
-            <span class="title">Author</span>
-            <h3 itemprop="name">
-            <a href="hojun.cn" itemprop="url" rel="author">hojun</a>
-            </h3>
-          </div>
-        </div>
-        <hr>
-        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
-      </section>
-    </main><!-- #main -->
-  </div><!-- #primary -->
+    </div>
+  </div>
 </div>
-
-
 
     </div>    
     <div class="ins-search">
