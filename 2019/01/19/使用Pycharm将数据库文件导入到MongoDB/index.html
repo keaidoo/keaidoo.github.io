@@ -419,12 +419,12 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="1-工具：MongoDB-Pycharm"><a href="#1-工具：MongoDB-Pycharm" class="headerlink" title="1.工具：MongoDB,Pycharm"></a>1.工具：MongoDB,Pycharm</h1><h2 id="2-在Pycharm安装-pymongo"><a href="#2-在Pycharm安装-pymongo" class="headerlink" title="2.在Pycharm安装 pymongo"></a>2.在Pycharm安装 pymongo</h2><h3 id="3-我是在虚拟环境下安装"><a href="#3-我是在虚拟环境下安装" class="headerlink" title="3.我是在虚拟环境下安装"></a>3.我是在虚拟环境下安装</h3><p>因为不同的项目需要不同的环境，为了保持每个环境之间的纯净，这里我先进入一个我创建好的虚拟环境vene,如果没有虚拟环境，可以直接在cmd运行<code>pip install pymongo</code>。</p>
-<h6 id="（1）workon-venv-进入虚拟环境"><a href="#（1）workon-venv-进入虚拟环境" class="headerlink" title="（1）workon venv   进入虚拟环境"></a>（1）<code>workon venv</code>   进入虚拟环境</h6><h6 id="（2）pip-install-pymongo-安装pymongo"><a href="#（2）pip-install-pymongo-安装pymongo" class="headerlink" title="（2）pip install pymongo   安装pymongo"></a>（2）<code>pip install pymongo</code>   安装pymongo</h6><p><img src="https://upload-images.jianshu.io/upload_images/15933937-b60035101e55aa99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Successfully installed pymongo-3.7.2, 成功安装
+          <h2 id="1-工具：MongoDB-Pycharm"><a href="#1-工具：MongoDB-Pycharm" class="headerlink" title="1.工具：MongoDB,Pycharm"></a>1.工具：MongoDB,Pycharm</h2><h2 id="2-在Pycharm安装-pymongo"><a href="#2-在Pycharm安装-pymongo" class="headerlink" title="2.在Pycharm安装 pymongo"></a>2.在Pycharm安装 pymongo</h2><h2 id="3-我是在虚拟环境下安装"><a href="#3-我是在虚拟环境下安装" class="headerlink" title="3.我是在虚拟环境下安装"></a>3.我是在虚拟环境下安装</h2><p>因为不同的项目需要不同的环境，为了保持每个环境之间的纯净，这里我先进入一个我创建好的虚拟环境vene,如果没有虚拟环境，可以直接在cmd运行<code>pip install pymongo</code>。</p>
+<h3 id="（1）workon-venv-进入虚拟环境"><a href="#（1）workon-venv-进入虚拟环境" class="headerlink" title="（1）workon venv   进入虚拟环境"></a>（1）<code>workon venv</code>   进入虚拟环境</h3><h3 id="（2）pip-install-pymongo-安装pymongo"><a href="#（2）pip-install-pymongo-安装pymongo" class="headerlink" title="（2）pip install pymongo   安装pymongo"></a>（2）<code>pip install pymongo</code>   安装pymongo</h3><p><img src="https://upload-images.jianshu.io/upload_images/15933937-b60035101e55aa99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Successfully installed pymongo-3.7.2, 成功安装
 "></p>
-<h6 id="3-进入pycharm-settings-Project-Interpreter"><a href="#3-进入pycharm-settings-Project-Interpreter" class="headerlink" title="(3)进入pycharm-settings-Project Interpreter"></a>(3)进入pycharm-settings-Project Interpreter</h6><p><img src="https://upload-images.jianshu.io/upload_images/15933937-8deb98d24adf0369.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Project Interpreter看见pymongo
+<h3 id="3-进入-pycharm-settings-Project-Interpreter"><a href="#3-进入-pycharm-settings-Project-Interpreter" class="headerlink" title="(3)进入 pycharm-settings-Project Interpreter"></a>(3)进入 pycharm-settings-Project Interpreter</h3><p><img src="https://upload-images.jianshu.io/upload_images/15933937-8deb98d24adf0369.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Project Interpreter看见pymongo
 "></p>
-<h3 id="4-创建-importMongo-py，代码如下："><a href="#4-创建-importMongo-py，代码如下：" class="headerlink" title="4.创建 importMongo.py，代码如下："></a>4.创建 importMongo.py，代码如下：</h3><pre><code># -*- coding:utf-8 -*-
+<h2 id="4-创建-importMongo-py，代码如下："><a href="#4-创建-importMongo-py，代码如下：" class="headerlink" title="4.创建 importMongo.py，代码如下："></a>4.创建 importMongo.py，代码如下：</h2><pre><code># -*- coding:utf-8 -*-
 from pymongo import *
 import json
 import os
@@ -454,7 +454,7 @@ class JsonToMongo():
                     self.collection.insert(data)
                     print(&#39;写入成功&#39;)
                 except Exception as e:
-                    print(e)</code></pre><h3 id="5-运行就可以啦"><a href="#5-运行就可以啦" class="headerlink" title="5.运行就可以啦"></a>5.运行就可以啦</h3><p><img src="https://upload-images.jianshu.io/upload_images/15933937-8ab94c731f77fc11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="成功"></p>
+                    print(e)</code></pre><h2 id="5-运行就可以啦"><a href="#5-运行就可以啦" class="headerlink" title="5.运行就可以啦"></a>5.运行就可以啦</h2><p><img src="https://upload-images.jianshu.io/upload_images/15933937-8ab94c731f77fc11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="成功"></p>
 
         </div>
         <!-- .entry-content -->
