@@ -419,19 +419,14 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="学习内容：DGL-Get-Started"><a href="#学习内容：DGL-Get-Started" class="headerlink" title="学习内容：DGL - Get Started"></a>学习内容：<a href="https://docs.dgl.ai" target="_blank" rel="noopener">DGL - Get Started</a></h2><h2 id="讨论问题"><a href="#讨论问题" class="headerlink" title="讨论问题"></a>讨论问题</h2><h3 id="1-如何借助networkx创建dgl图？如何直接创建dgl图"><a href="#1-如何借助networkx创建dgl图？如何直接创建dgl图" class="headerlink" title="1. 如何借助networkx创建dgl图？如何直接创建dgl图"></a>1. 如何借助networkx创建dgl图？如何直接创建dgl图</h3><p>networkx可以将图形可视化。</p>
-<blockquote>
-<p>借助networkx创建dgl图</p>
-</blockquote>
+          <h2 id="学习内容：DGL-Get-Started"><a href="#学习内容：DGL-Get-Started" class="headerlink" title="学习内容：DGL - Get Started"></a>学习内容：<a href="https://docs.dgl.ai" target="_blank" rel="noopener">DGL - Get Started</a></h2><h2 id="讨论问题"><a href="#讨论问题" class="headerlink" title="讨论问题"></a>讨论问题</h2><h3 id="1-如何借助networkx创建dgl图？如何直接创建dgl图"><a href="#1-如何借助networkx创建dgl图？如何直接创建dgl图" class="headerlink" title="1. 如何借助networkx创建dgl图？如何直接创建dgl图"></a>1. 如何借助networkx创建dgl图？如何直接创建dgl图</h3><p>networkx可以将图形可视化。<br>借助networkx创建dgl图</p>
 <pre><code>import networkx as nx
 import dgl
 
 g_nx = nx.petersen_graph()
-g_dgl = dgl.DGLGraph(g_nx)</code></pre><blockquote>
-<p>直接创建dgl图</p>
+g_dgl = dgl.DGLGraph(g_nx)</code></pre><p>直接创建dgl图</p>
 <pre><code>import dgl
-g = dgl.DGLGraph()</code></pre></blockquote>
-<h3 id="2-如何添加结点和边？"><a href="#2-如何添加结点和边？" class="headerlink" title="2. 如何添加结点和边？"></a>2. 如何添加结点和边？</h3><p>添加结点：</p>
+g = dgl.DGLGraph()</code></pre><h3 id="2-如何添加结点和边？"><a href="#2-如何添加结点和边？" class="headerlink" title="2. 如何添加结点和边？"></a>2. 如何添加结点和边？</h3><p>添加结点：</p>
 <pre><code># add 34 nodes into the graph; nodes are labeled from 0~33
     g.add_nodes(34)</code></pre><p>添加边：<br>边缘在DGL是有方向的，让边具有双向性</p>
 <pre><code># add edges two lists of nodes: src and dst
@@ -479,38 +474,24 @@ g.edata.pop(&#39;w&#39;)</code></pre><h3 id="7-什么叫multi-graph。请举出�
         g.recv(v)</code></pre><p> 通过所有的边来获取消息并更新所有的节点</p>
 <pre><code>def pagerank_level2(g):
     g.update_all()</code></pre><p>利用源结点的特征属性来计算输出</p>
-<pre><code>dgl.function.copy_src(src, out) is an edge UDF that computes the output using the source node feature data.</code></pre><h3 id="10-使用builtin函数有什么好处？"><a href="#10-使用builtin函数有什么好处？" class="headerlink" title="10. 使用builtin函数有什么好处？"></a>10. 使用<code>builtin</code>函数有什么好处？</h3><p>使用内置函数的好处是：使用内置函数，比普通的Python实现，速度要快一倍左右。 代码简洁，提升性能。</p>
+<pre><code>dgl.function.copy_src(src, out) is an edge UDF that computes the output using the source node feature data.</code></pre><h3 id="10-使用builtin函数有什么好处？"><a href="#10-使用builtin函数有什么好处？" class="headerlink" title="10. 使用builtin函数有什么好处？"></a>10. 使用<code>builtin</code>函数有什么好处？</h3><p> 使用内置函数的好处是：使用内置函数，比普通的Python实现，速度要快一倍左右。 代码简洁，提升性能。</p>
 <h3 id="11-例子"><a href="#11-例子" class="headerlink" title="11. 例子"></a>11. 例子</h3><p><code>Batched Graph Classification with DGL</code><br>在<code>Classifier.forward()</code>中，设隐层1节点数为256，隐层2节点数为266。输入层节点为1，对应一个graph，输出层 节点为8，对应8个类别。一个batch的大小为32，图的节点数为400。经过以下变换后，h的维度是多少？</p>
-<ul>
-<li><ol>
-<li>调用 g.update_all 之前 :1</li>
-</ol>
+<ol>
+<li><p>调用 g.update_all 之前 :1</p>
 </li>
-<li><ol start="2">
-<li>g.update_all 之后 :1</li>
-</ol>
+<li><p>g.update_all 之后 :1</p>
 </li>
-<li><ol start="3">
-<li>经过线性变换之后:256</li>
-</ol>
+<li><p>经过线性变换之后:256</p>
 </li>
-<li><ol start="4">
-<li>再次调用g.update_all 之后 :256</li>
-</ol>
+<li><p>再次调用g.update_all 之后 :256</p>
 </li>
-<li><ol start="5">
-<li>再次经过线性变换之后:266</li>
-</ol>
+<li><p>再次经过线性变换之后:266</p>
 </li>
-<li><ol start="6">
-<li>调用dgl.mean_nodes之后 :266</li>
-</ol>
+<li><p>调用dgl.mean_nodes之后 :266</p>
 </li>
-<li><ol start="7">
-<li>调用classify之后:8</li>
-</ol>
+<li><p>调用classify之后:8</p>
 </li>
-</ul>
+</ol>
 
         </div>
         <!-- .entry-content -->
