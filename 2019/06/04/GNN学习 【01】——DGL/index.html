@@ -438,23 +438,25 @@ g = dgl.DGLGraph()</code></pre></blockquote>
 边缘在DGL是有方向的，让边具有双向性</code></pre><h1 id="add-edges-two-lists-of-nodes-src-and-dst"><a href="#add-edges-two-lists-of-nodes-src-and-dst" class="headerlink" title="add edges two lists of nodes: src and dst"></a>add edges two lists of nodes: src and dst</h1><p>src, dst = tuple(zip(*edge_list))<br>g.add_edges(src, dst)</p>
 <h1 id="edges-are-directional-in-DGL-make-them-bi-directional"><a href="#edges-are-directional-in-DGL-make-them-bi-directional" class="headerlink" title="edges are directional in DGL; make them bi-directional"></a>edges are directional in DGL; make them bi-directional</h1><p>g.add_edges(dst, src)</p>
 <pre><code>
-### 3. 如何访问结点的属性？</code></pre><h1 id="access-node-set-with-integer-list-or-integer-tensor"><a href="#access-node-set-with-integer-list-or-integer-tensor" class="headerlink" title="access node set with integer, list, or integer tensor"></a>access node set with integer, list, or integer tensor</h1><p>g.nodes[0].data[‘x’] = th.zeros(1, 3)<br>g.nodes[[0, 1, 2]].data[‘x’] = th.zeros(3, 3)<br>g.nodes[th.tensor([0, 1, 2])].data[‘x’] = th.zeros(3, 3)</p>
-<pre><code>### 4. 访问边的属性有哪两种方法？</code></pre><p>g.edata[‘w’] = th.randn(9, 2)</p>
-<h1 id="access-edge-set-with-IDs-in-integer-list-or-integer-tensor"><a href="#access-edge-set-with-IDs-in-integer-list-or-integer-tensor" class="headerlink" title="access edge set with IDs in integer, list, or integer tensor"></a>access edge set with IDs in integer, list, or integer tensor</h1><p>g.edges[1].data[‘w’] = th.randn(1, 2)<br>g.edges[[0, 1, 2]].data[‘w’] = th.zeros(3, 2)<br>g.edges[th.tensor([0, 1, 2])].data[‘w’] = th.zeros(3, 2)</p>
-<h1 id="one-can-also-access-the-edges-by-giving-endpoints"><a href="#one-can-also-access-the-edges-by-giving-endpoints" class="headerlink" title="one can also access the edges by giving endpoints"></a>one can also access the edges by giving endpoints</h1><p>g.edges[1, 0].data[‘w’] = th.ones(1, 2)                 # edge 1 -&gt; 0<br>g.edges[[1, 2, 3], [0, 0, 0]].data[‘w’] = th.ones(3, 2) # edges [1, 2, 3] -&gt; 0<br>````</p>
-<h3 id="5-边和点的属性用什么数据结构进行存贮？边和点属性对应的scheme包含哪些信息？"><a href="#5-边和点的属性用什么数据结构进行存贮？边和点属性对应的scheme包含哪些信息？" class="headerlink" title="5. 边和点的属性用什么数据结构进行存贮？边和点属性对应的scheme包含哪些信息？"></a>5. 边和点的属性用什么数据结构进行存贮？边和点属性对应的scheme包含哪些信息？</h3><blockquote>
-<p>用字典来进行存贮</p>
-</blockquote>
-<pre><code>#After assignments, each node/edge field will be associated with a scheme containing the shape and data type (dtype) of its field value.
-print(g.node_attr_schemes())
-g.ndata[&#39;x&#39;] = th.zeros((10, 4))
-print(g.node_attr_schemes())</code></pre><blockquote>
-<p>对应的scheme包含了形状和数据类型</p>
-<pre><code></code></pre></blockquote>
-<p>#Out:<br>{‘x’: Scheme(shape=(3,), dtype=torch.float32)}<br>{‘x’: Scheme(shape=(4,), dtype=torch.float32)}</p>
+### 3. 如何访问结点的属性？
+</code></pre><h1 id="access-node-set-with-integer-list-or-integer-tensor"><a href="#access-node-set-with-integer-list-or-integer-tensor" class="headerlink" title="access node set with integer, list, or integer tensor"></a>access node set with integer, list, or integer tensor</h1><p>g.nodes[0].data[‘x’] = th.zeros(1, 3)<br>g.nodes[[0, 1, 2]].data[‘x’] = th.zeros(3, 3)<br>g.nodes[th.tensor([0, 1, 2])].data[‘x’] = th.zeros(3, 3)</p>
 <pre><code>
-### 6. 如何删除边或节点的属性？</code></pre><p>#One can also remove node/edge states from the graph. This is particularly useful to save memory during inference.<br>g.ndata.pop(‘x’)<br>g.edata.pop(‘w’)</p>
-<pre><code>### 7. 什么叫multi graph。请举出一个现实的例子
+### 4. 访问边的属性有哪两种方法？
+</code></pre><p>g.edata[‘w’] = th.randn(9, 2)</p>
+<h1 id="access-edge-set-with-IDs-in-integer-list-or-integer-tensor"><a href="#access-edge-set-with-IDs-in-integer-list-or-integer-tensor" class="headerlink" title="access edge set with IDs in integer, list, or integer tensor"></a>access edge set with IDs in integer, list, or integer tensor</h1><p>g.edges[1].data[‘w’] = th.randn(1, 2)<br>g.edges[[0, 1, 2]].data[‘w’] = th.zeros(3, 2)<br>g.edges[th.tensor([0, 1, 2])].data[‘w’] = th.zeros(3, 2)</p>
+<h1 id="one-can-also-access-the-edges-by-giving-endpoints"><a href="#one-can-also-access-the-edges-by-giving-endpoints" class="headerlink" title="one can also access the edges by giving endpoints"></a>one can also access the edges by giving endpoints</h1><p>g.edges[1, 0].data[‘w’] = th.ones(1, 2)                 # edge 1 -&gt; 0<br>g.edges[[1, 2, 3], [0, 0, 0]].data[‘w’] = th.ones(3, 2) # edges [1, 2, 3] -&gt; 0</p>
+<pre><code>
+### 5. 边和点的属性用什么数据结构进行存贮？边和点属性对应的scheme包含哪些信息？
+&gt; 用字典来进行存贮
+</code></pre><p>#After assignments, each node/edge field will be associated with a scheme containing the shape and data type (dtype) of its field value.<br>print(g.node_attr_schemes())<br>g.ndata[‘x’] = th.zeros((10, 4))<br>print(g.node_attr_schemes())</p>
+<pre><code>
+&gt;对应的scheme包含了形状和数据类型
+</code></pre><p>#Out:<br>{‘x’: Scheme(shape=(3,), dtype=torch.float32)}<br>{‘x’: Scheme(shape=(4,), dtype=torch.float32)}</p>
+<pre><code>
+### 6. 如何删除边或节点的属性？
+</code></pre><p>#One can also remove node/edge states from the graph. This is particularly useful to save memory during inference.<br>g.ndata.pop(‘x’)<br>g.edata.pop(‘w’)</p>
+<pre><code>
+### 7. 什么叫multi graph。请举出一个现实的例子
 
 Multigraphs ~~~ Many graph applications need multi-edges.
 许多图的应用都需要多边。
@@ -462,18 +464,22 @@ Multigraphs ~~~ Many graph applications need multi-edges.
 实际例子：
 1、地图，两个地点之间在地图上可能会有不同的路径。
 2、同学之间的关系：两个同学可能有合作关系，合作论文，互相做实验，但是做的事情是不同的。
+
 ### 8. 在dgl库中，```message```和```reduce```分别完成什么功能？
-&gt;首先，我们使用DGL的内置函数定义消息传递：
-使用源节点“h”作为信息传递</code></pre><p>def gcn_message(edges):<br>    # The argument is a batch of edges.<br>    # This computes a (batch of) message called ‘msg’ using the source node’s feature ‘h’.<br>    return {‘msg’ : edges.src[‘h’]}</p>
-<pre><code>&gt;定义消息累和函数。</code></pre><p>def gcn_reduce(nodes):<br>    # The argument is a batch of nodes.<br>    # This computes the new ‘h’ features by summing received ‘msg’ in each node’s mailbox.<br>    return {‘h’ : torch.sum(nodes.mailbox[‘msg’], dim=1)}</p>
+
+&gt; 首先，我们使用DGL的内置函数定义消息传递：
+使用源节点“h”作为信息传递
+</code></pre><p>def gcn_message(edges):<br>    # The argument is a batch of edges.<br>    # This computes a (batch of) message called ‘msg’ using the source node’s feature ‘h’.<br>    return {‘msg’ : edges.src[‘h’]}</p>
+<pre><code>
+&gt; 定义消息累和函数。</code></pre><p>def gcn_reduce(nodes):<br>    # The argument is a batch of nodes.<br>    # This computes the new ‘h’ features by summing received ‘msg’ in each node’s mailbox.<br>    return {‘h’ : torch.sum(nodes.mailbox[‘msg’], dim=1)}</p>
 <pre><code>
 ### 9. 说明```send， recv,  update_all， copy_src```的功能。
-&gt;发送消息到所有边</code></pre><p>def pagerank_naive(g):<br>    # Phase #1: send out messages along all edges.<br>    for u, v in zip(*g.edges()):<br>        g.send((u, v))</p>
+&gt; 发送消息到所有边</code></pre><p>def pagerank_naive(g):<br>    # Phase #1: send out messages along all edges.<br>    for u, v in zip(*g.edges()):<br>        g.send((u, v))</p>
 <pre><code>
-&gt;接受消息来计算新的页面排名的值</code></pre><pre><code># Phase #2: receive messages to compute new PageRank values.
+&gt; 接受消息来计算新的页面排名的值</code></pre><pre><code># Phase #2: receive messages to compute new PageRank values.
 for v in g.nodes():
-    g.recv(v)</code></pre><pre><code>&gt;通过所有的边来获取消息并更新所有的节点</code></pre><p>def pagerank_level2(g):<br>    g.update_all()</p>
-<pre><code>&gt;利用源结点的特征属性来计算输出</code></pre><p>dgl.function.copy_src(src, out) is an edge UDF that computes the output using the source node feature data.<br>```</p>
+    g.recv(v)</code></pre><pre><code>&gt; 通过所有的边来获取消息并更新所有的节点</code></pre><p>def pagerank_level2(g):<br>    g.update_all()</p>
+<pre><code>&gt; 利用源结点的特征属性来计算输出</code></pre><p>dgl.function.copy_src(src, out) is an edge UDF that computes the output using the source node feature data.<br>```</p>
 <h3 id="10-使用builtin函数有什么好处？"><a href="#10-使用builtin函数有什么好处？" class="headerlink" title="10. 使用builtin函数有什么好处？"></a>10. 使用<code>builtin</code>函数有什么好处？</h3><blockquote>
 <p>使用内置函数的好处是：使用内置函数，比普通的Python实现，速度要快一倍左右。 代码简洁，提升性能。</p>
 </blockquote>
