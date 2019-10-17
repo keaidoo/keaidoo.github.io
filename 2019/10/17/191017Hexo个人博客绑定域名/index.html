@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">可爱多</title>
+  <title itemprop="name">Hexo个人博客绑定域名 | 可爱多</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -383,346 +383,145 @@
   </div>
 </header>
 
-      <div class="blank" style="padding-top: 0px;"></div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/3.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/3.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      Hexo个人博客绑定域名</h1>
+      <p class="entry-census">
+        <span>
+          <a href="wangyaqian.club">
+            <img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn/img/custom/avatar1.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="wangyaqian.club">可爱多</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2019-10-17<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
-    
-        <div class="notice" style="margin-top:60px">
-            <i class="iconfont icon-notification">
-    </i>
-            <div class="notice-content">
-                欢迎来到我的小站～
-            </div>
-        </div>
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
-            <div class="top-feature-row">
-    <h1 class="fes-title" style="font-family: 'Ubuntu', sans-serif;">
-        <i class="fa fa-anchor" aria-hidden="true">
-  </i> 兴趣
-    </h1>
-    
-        <div class="top-feature-v2">
-            <div class="the-feature square from_left_and_right">
-                <a href="/theme-sakura/" target="_blank">
-                    <div class="img">
-                        <img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/startdash/sakura.md.png">
-                    </div>
-                    <div class="info">
-                        <h3>
-                            Sakura
-                        </h3>
-                        <p>
-                            本站 hexo 主题
-                        </p>
-                    </div>
-                </a>
-            </div>
+        <div class="entry-content">
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>当我们在用hexo搭建了个人博客之后，用username.github.io访问难免有些奇怪，下面就花几分钟时间对如何绑定个人域名进行描述。</p>
+<h2 id="一、购买域名"><a href="#一、购买域名" class="headerlink" title="一、购买域名"></a>一、购买域名</h2><p>购买域名：可以在腾讯云，阿里云，百度云等</p>
+<p>购买域名可以分为三个步骤：</p>
+<ol>
+<li><p>检测自己想要购买的域名是否被别人注册，如果已被注册，只能选其它域名了。域名注册检测地址：域名注册检测地址</p>
+</li>
+<li><p>检测通过后，填写自己的域名注册信息，这个域名信息必须是真实的。</p>
+</li>
+<li><p>选择域名购买年限，然后支付域名费用。</p>
+</li>
+</ol>
+<p>经过以上三个步骤的操作，就可以成功购买了你的域名了。域名的费用一般是一年一付的，如果你</p>
+<p>购买的域名超过了期限不续费，会被注销。</p>
+<p>我这边是在腾讯云买的一个域名，wangyaqian.club 当然也可以选一些top等比较便宜的域名，根据个人情况而定，购买完成之后需要进行邮箱验证和实名认证。</p>
+<h2 id="二、解析域名"><a href="#二、解析域名" class="headerlink" title="二、解析域名"></a>二、解析域名</h2><p>首先需要实名认证，等待实名认证通过后跳转到域名管理中，点击解析按钮.<br><img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn/img/post/10171.png" alt></p>
+<p>打开命令行：</p>
+<pre><code>ping username.github.io</code></pre><p><img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn/img/post/10173" alt></p>
+<p>把ip填入记录值<br><img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn/img/post/10172" alt></p>
+<p>通常我们添加www和@。</p>
+<h2 id="三、Github设置别名"><a href="#三、Github设置别名" class="headerlink" title="三、Github设置别名"></a>三、Github设置别名</h2><p>接下来到我们进入该仓库中 点击 setting 往下滑<br><img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn/img/post/10174" alt><br>找到custom domain 将自己购买的域名填写进去。<br><img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn/img/post/10175" alt><br>最后一步就是在我们的本地博客路径下的source文件夹里新建一个CNAME的文件， 里面输入我们的域名。</p>
+<h2 id="四、重新部署"><a href="#四、重新部署" class="headerlink" title="四、重新部署"></a>四、重新部署</h2><p>然后执行命令，重新部署，然后打开我们的域名就可以访问啦。</p>
+<pre><code>hexo clean
+hexo g
+hexo d</code></pre>
         </div>
-        
-        <div class="top-feature-v2">
-            <div class="the-feature square from_left_and_right">
-                <a href="http://space.bilibili.com/271849279" target="_blank">
-                    <div class="img">
-                        <img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/startdash/bilibili.jpg">
-                    </div>
-                    <div class="info">
-                        <h3>
-                            Bilibili
-                        </h3>
-                        <p>
-                            博主的b站视频
-                        </p>
-                    </div>
-                </a>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
             </div>
+          </div>
         </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
         
-        <div class="top-feature-v2">
-            <div class="the-feature square from_left_and_right">
-                <a href="/" target="_blank">
-                    <div class="img">
-                        <img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/startdash/wangshiwu.jpg">
-                    </div>
-                    <div class="info">
-                        <h3>
-                            hojun的万事屋
-                        </h3>
-                        <p>
-                            技术服务
-                        </p>
-                    </div>
-                </a>
-            </div>
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2019/09/12/论文/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/5.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/5.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                【论文】Urban Traffic Prediction from Spatio-Temporal Data Using Deep Meta Learning.</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="wangyaqian.club" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn/img/custom/avatar1.jpg" itemprop="image" alt="可爱多" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="wangyaqian.club" itemprop="url" rel="author">可爱多</a>
+            </h3>
+          </div>
         </div>
-        
+        <hr>
+        <p><i class="iconfont icon-write"></i>喜爱一切可爱的事物～</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
-                <div id="primary" class="content-area">
-                    <main id="main" class="site-main" role="main">
-                        <h1 class="main-title" style="font-family: 'Ubuntu', sans-serif;">
-                            <i class="fa fa-envira" aria-hidden="true"></i> 发现
-                        </h1>
-                        
-  <!-- 首页默认取最最新文章集 -->
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/10/17/191017Hexo个人博客绑定域名/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/3.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-10-17 20:10</div>
-      <a href="/2019/10/17/191017Hexo个人博客绑定域名/" class="post-title">
-        <h3>Hexo个人博客绑定域名</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/博客/">博客<em>·</em></a>
-          
-            <a href="/tags/悦读/">悦读<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>十分钟搞定</p>
-        <div class="post-bottom">
-          <a href="/2019/10/17/191017Hexo个人博客绑定域名/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/09/12/论文/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/5.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-9-12 22:09</div>
-      <a href="/2019/09/12/论文/" class="post-title">
-        <h3>【论文】Urban Traffic Prediction from Spatio-Temporal Data Using Deep Meta Learning.</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/web/">web<em>·</em></a>
-          
-            <a href="/tags/悦读/">悦读<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>论文解读</p>
-        <div class="post-bottom">
-          <a href="/2019/09/12/论文/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/06/04/GNN学习 【01】——DGL/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/170605/130458-149663909840b3.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-6-4 16:06</div>
-      <a href="/2019/06/04/GNN学习 【01】——DGL/" class="post-title">
-        <h3>GNN学习 【01】——DGL</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/深度学习/">深度学习<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>图神经网络</p>
-        <div class="post-bottom">
-          <a href="/2019/06/04/GNN学习 【01】——DGL/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/04/14/CSS水平垂直居中布局/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/1.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-4-14 21:04</div>
-      <a href="/2019/04/14/CSS水平垂直居中布局/" class="post-title">
-        <h3>CSS水平垂直居中布局</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/web/">web<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/04/14/CSS水平垂直居中布局/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/01/19/使用Pycharm将数据库文件导入到MongoDB/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/8.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-1-19 22:01</div>
-      <a href="/2019/01/19/使用Pycharm将数据库文件导入到MongoDB/" class="post-title">
-        <h3>使用Pycharm将数据库文件导入到MongoDB</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/pycharm/">pycharm<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/01/19/使用Pycharm将数据库文件导入到MongoDB/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2018/12/12/Hexo-Theme-Sakura/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/2.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2018-12-12 22:12</div>
-      <a href="/2018/12/12/Hexo-Theme-Sakura/" class="post-title">
-        <h3>Hexo-Theme-Sakura</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/web/">web<em>·</em></a>
-          
-            <a href="/tags/悦读/">悦读<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>hexo-sakura主题使用教程</p>
-        <div class="post-bottom">
-          <a href="/2018/12/12/Hexo-Theme-Sakura/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
 
 
-                    </main>
-                    <!-- 首页默认取最最新文章集 -->
-                    <!--  -->
-                </div>
-                
-</div>
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
