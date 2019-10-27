@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">【论文】Urban Traffic Prediction from Spatio-Temporal Data Using Deep Meta Learning. | 可爱多</title>
+  <title itemprop="name">在网页中添加Live2D看板娘 | 可爱多</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -393,7 +393,7 @@
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      【论文】Urban Traffic Prediction from Spatio-Temporal Data Using Deep Meta Learning.</h1>
+      在网页中添加Live2D看板娘</h1>
       <p class="entry-census">
         <span>
           <a href="">
@@ -405,7 +405,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2019-9-12<span class="bull">
+        2019-10-27<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -419,23 +419,64 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p>城市交通预测是城市计算领域中一个非常重要的研究课题，准确的交通预测可以帮助我们更好地理解城市交通，给交通系统的改进提供思路，同时也能对民众提供及时的城市交通预警。然而，准确的城市交通预测需解决以下两个挑战：<br>1) 交通数据间复杂的时空相关性，即一个地点的交通状况会影响其未来一段时间内的交通，也会影响其周围区域的交通。如图2.1（a）所示，当地点S3发生交通事故时，可能导致它相邻的地点S1,S2,S4堵车；当地点S4有重大事件发生时（例如，演唱会）,将有大量的人群涌向S4，从而影响S4未来一段时间的交通状态。<br>2) 不同地点间，数据的时空相关性是多样的，并且这样的相关性取决于地理信息，如地点周围的兴趣点，路网结构等。如图2.1（b）区域R1、R2和R3拥有不同的POI分布和路网结构。其中，R1、R3有较多的办公楼，表示工作区，而R2有较多的住宅，表示一个住宅区。如图2.1（c）所示，这些区域的POI分布、路网结构不同，导致，R1、R2、R3三个区域的流入人流量趋势各不相同。但同时，由于R1与R3的POI分布较相似，它们的流量趋势呈现出一定的相似性。因此，交通预测的核心挑战就是建模交通数据中的时空相关性和地理信息对时空相关性的影响。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p12" alt="8fd882e84772d1bb6358feb9b46e8f72.png"></p>
-<p>▲图2.1 城市交通预测的挑战</p>
-<p><strong>解决方案</strong>为了能在一般化的非规则空间结构上（如路网）预测未来交通，我们首先需要将交通的关联模式抽象成图结构。其中，每个点表示的地图上的地点，而边表示的是两个地点间的关联。接下来，我们提出参数生成的方式，来建模地理信息对时空相关性的影响。如图2.2所示，我们用一个模型从节点的地理特征中，学习节点和边的特性，而后用这些特性，进而学习时间、空间的关联性模型。最后用学到的模型进行交通预测。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p13" alt="c32abaf9204c4422df25a096af38e3aa.png"></p>
-<p>▲图2.2为此，我们引入sequence-to-sequence架构，如图2.3所示，其中包含：</p>
-<ol>
-<li>循环神经网络（RNN），将交通数据编码映射到高维的空间，学习高维特征。</li>
-<li>元知识学习器（Meta-Knowledge Learner）。如图2.3（b）我们用两个元知识学习器，分别从点和边的地理信息中学习点元知识（Node meta knowledge,NMK）和边元知识（Edge metaknowledge，EMK），用于生成模型的参数。</li>
-<li>基于元学习的图注意力网络（Meta-GAT）。该网络接收RNN的输出，用于建模多样的空间关联。由于在图结构中，不同的边所描述的空间相关性取决于这条边的特征属性，所以，我们用一个元学习器从地理信息的元知识中学习GAT模型（图2.3(c)）。</li>
-<li>基于元学习的循环神经网络（Meta-RNN）。该网络接收Meta-GAT的输出，用于建模多样的时间关联性。我们从每个节点地理信息的元知识中学习RNN的参数，来对多样的时间相关性建模（图2.3(d)）。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p11" alt="7f7da436606e1fb5602a56f5beba2a27.png"></li>
-</ol>
-<p>▲图2.3</p>
-<p>实验结果最后，我们使用出租车流量预测和道路车辆速度预测这两个真实的任务来验证模型的性能。如表2.4所示，从MAE和RMSE这两个指标上看，我们的模型在使用更少参数的情况下，都要优于之前最好的结果。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p14" alt="e127a8872075fa81de854f2f0f50bc17.png"></p>
-<p>▲表2.4同时我们测试了各个模块的提升效果。如图2.5所示，在基准模型基础上，每加上一个模块，模型都能取得更好的结果。应用上所有模块后，模型的预测准确率最高。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p16" alt="5a2c8237c966df6d3d6b20a55e674fe6.png"></p>
-<p>▲图2.5</p>
-<p>为了进一步说明深度元学习的有效性，我们对模型所学习到的点元知识进行评估。对于每个节点，其元知识是表征该节点特性的嵌入向量。一组好的嵌入向量需要能表征节点之间的相似度。为此，我们在节点的嵌入空间下（Embedding space），找到每个节点的k邻近节点。然后，用交通数据的测试集计算每个节点和其k临近节点的平均相似度。这里我们选用两种序列相似度指标：Pearson相关性（CORR）和一阶时间相关性（CORT），这两个值越大，表示相似度越高。如图2.6所示，用元学习方法学到的嵌入空间，每个节点与其周围节点的相似度明显高于在非元学习方法的嵌入空间下节点与其邻近节点的相似度。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p17" alt="d2ed710b94f69bdf0b9786dda0f720d7.png"><br>                                    图2.6</p>
-<p>最后，我们用一个实例来展现元学习的优势。在出租车流量预测任务中，我们选取3个典型的区域：永泰园、中关村和三元桥，分别对应于住宅区、办公区和交通枢纽。然后，我们在嵌入空间下，分别找到它们最近的节点，并且将所有节点所对应的交通流量画在图上。图2.7(a)展现的是非元学习下，每个区域和它在嵌入空间下相邻区域的流量比较。可以发现，在该嵌入空间下，节点和其相邻点并不相似。而图2.7(b)展现的是元学习下的结果，对于每个区域，其嵌入空间下相邻的区域都跟它有非常相似的流量趋势，进而说明了元学习方法的有效性。<br><img src="evernotecid://EA81CBAA-D91B-4EFF-AECC-82252BA7206F/appyinxiangcom/25054471/ENResource/p15" alt="16b712cbbf05267e0b86b0debc14fe96.png"></p>
-<p>图2.7</p>
+          <h1 id="Live2D-Widget"><a href="#Live2D-Widget" class="headerlink" title="Live2D Widget"></a>Live2D Widget</h1><h2 id="特性-Feature"><a href="#特性-Feature" class="headerlink" title="特性 Feature"></a>特性 Feature</h2><p>在网页中添加Live2D看板娘。与PJAX兼容，支持无刷新加载。<br>Add Live2D widget to web page. Compatible with PJAX.</p>
+<p><strong>警告：不支持IE。</strong><br><strong>WARNING: DO NOT SUPPORT IE.</strong></p>
+<h2 id="示例-Demo"><a href="#示例-Demo" class="headerlink" title="示例 Demo"></a>示例 Demo</h2><p>在<a href="https://wangyaqian.club" target="_blank" rel="noopener">本博客</a>的左下角可查看效果。需要使用支持WebGL的现代浏览器浏览。</p>
+<p>这个仓库中也提供了两个Demo，即</p>
+<ul>
+<li><a href="https://mi.js.org/live2d-widget/demo/demo1.html" target="_blank" rel="noopener">demo1.html</a> ，展现基础效果</li>
+<li><a href="https://mi.js.org/live2d-widget/demo/demo2.html" target="_blank" rel="noopener">demo2.html</a> ，仿NPM的登陆界面</li>
+</ul>
+<h2 id="依赖-Dependencies"><a href="#依赖-Dependencies" class="headerlink" title="依赖 Dependencies"></a>依赖 Dependencies</h2><p>本插件需要jQuery和font-awesome支持，请确保它们已在页面中加载，例如在<code>&lt;head&gt;</code>中加入：<br>jQuery and font-awesome is required for this plugin. You can add this to <code>&lt;head&gt;</code>:</p>
+<pre><code class="xml">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;&gt;</code></pre>
+<p>否则无法正常显示。（如果你的网页已经加载了jQuery，就不要重复加载了）</p>
+<h2 id="使用-Usage"><a href="#使用-Usage" class="headerlink" title="使用 Usage"></a>使用 Usage</h2><p>你可以直接这样使用：</p>
+<pre><code class="xml">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p><strong>敲黑板，划重点，将这一行代码加入<code>&lt;head&gt;</code>或<code>&lt;body&gt;</code>，即可看到效果。</strong> 如果你的网站启用了PJAX，由于看板娘不必每页刷新，因此需要注意将相关脚本放到PJAX刷新区域之外。<br>我的博客主题中，添加为路径<code>/blog/themes/Sakura/layout/_partial/footer.ejs</code></p>
+<p>换句话说，如果你是小白，或者只需要最基础的功能，就只需要：</p>
+<ul>
+<li>把这一行代码，连同前面的两行代码，一起放到html的<code>&lt;head&gt;</code>中即可；</li>
+<li>如果页面是用各种模版引擎、php、asp生成的，也要自行修改，方法类似，只是可能略为麻烦。</li>
+</ul>
+<p><strong>但是！我们强烈推荐自己进行配置，否则很多功能是不完整的，并且可能产生问题！</strong><br>如果你有兴趣自己折腾的话，请看下面的详细说明。</p>
+<h3 id="Using-CDN"><a href="#Using-CDN" class="headerlink" title="Using CDN"></a>Using CDN</h3><p>如果要自定义有关内容，可以把这个仓库Fork一份，然后进行修改。这时，使用方法对应地变为</p>
+<pre><code class="xml">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/username/live2d-widget/autoload.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p>将<code>username</code>替换为你的GitHub用户名即可。</p>
+<h3 id="Self-host"><a href="#Self-host" class="headerlink" title="Self-host"></a>Self-host</h3><p>你也可以直接把这些文件放到服务器上，而不是通过CDN加载。</p>
+<ul>
+<li>如果你可以通过ssh访问你的主机，请把整个项目克隆到服务器上。执行：<pre><code class="bash">cd /path/to/your/webroot
+# Clone this repository
+git clone https://github.com/stevenjoezhang/live2d-widget.git</code></pre>
+</li>
+<li>如果你的主机无法用ssh连接（例如一般的虚拟主机），请选择<code>Download ZIP</code>，然后通过ftp上传到主机上，再解压到网站的目录下。</li>
+<li>如果你是通过Hexo等工具部署的静态博客，请选择<code>Download ZIP</code>，然后解压到本地的博客目录下，例如<code>source</code>下与<code>_posts</code>同级的目录。重新部署博客时，相关文件就会自动上传到对应的目录。（还需要在Hexo主题相关的swig或ejs模版中正确配置路径，才可以加载）</li>
+</ul>
+<p>这样，整个项目就可以通过你的服务器IP或者域名从公网访问了。你可以试试能否正常地通过浏览器打开<code>autoload.js</code>和<code>live2d.min.js</code>等文件。<strong>（最好还要确定一下这些文件的内容是正确的，有时由于字符集的问题，文件中可能出现乱码；此时需要重新下载）</strong><br>如果没有问题，接下来需要修改一些配置。（需要通过服务器上的<code>vim</code>，<code>emacs</code>，cPanel文件管理器等工具修改；你也可以先在本地完成这一步骤，再上传到服务器上）<br>修改<code>autoload.js</code>中的参数<code>live2d_path</code>为<code>live2d-widget</code>这一文件夹在公网上的路径。比如说，如果你可以通过</p>
+<pre><code>https://www.example.com/path/to/live2d-widget/live2d.min.js</code></pre><p>访问到<code>live2d.min.js</code>，那么就把<code>live2d_path</code>的值修改为</p>
+<pre><code>https://www.example.com/path/to/live2d-widget/</code></pre><p>路径末尾的<code>/</code>一定要加上。具体可以参考<code>autoload.js</code>内的注释。<br>完成后，在你要添加看板娘的界面加入</p>
+<pre><code class="xml">&lt;script src=&quot;https://www.example.com/path/to/live2d-widget/autoload.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p>就可以加载了。</p>
+<h2 id="目录结构-Files"><a href="#目录结构-Files" class="headerlink" title="目录结构 Files"></a>目录结构 Files</h2><ul>
+<li><code>waifu-tips.json</code>中包含了触发条件（<code>selector</code>，选择器）和触发时显示的文字（<code>text</code>）；</li>
+<li><code>waifu.css</code>是看板娘的样式表。</li>
+</ul>
+<p>源文件是对Hexo的NexT主题有效的，为了适用于你自己的网页，可能需要自行修改，或增加新内容。<br><strong>警告：作者不对包括但不限于<code>waifu-tips.json</code>和<code>waifu-tips.js</code>文件中的内容负责，请自行确保它们是合适的。</strong></p>
+<p>如果有任何疑问，欢迎提Issue。如果有任何修改建议，欢迎提PR。</p>
+<h2 id="鸣谢-Credits"><a href="#鸣谢-Credits" class="headerlink" title="鸣谢 Credits"></a>鸣谢 Credits</h2><p>代码自这篇博文魔改而来：<br><a href="https://www.fghrsh.net/post/123.html" target="_blank" rel="noopener">https://www.fghrsh.net/post/123.html</a><br>相比初始的版本，这个仓库增加了一些功能，并优化了提示展现机制。</p>
+<p>更多内容可以参考：<br><a href="https://zhangshuqiao.org/2018-07/在网页中添加Live2D看板娘/" target="_blank" rel="noopener">https://zhangshuqiao.org/2018-07/在网页中添加Live2D看板娘/</a><br><a href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02" target="_blank" rel="noopener">https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02</a><br><a href="https://github.com/summerscar/live2dDemo" target="_blank" rel="noopener">https://github.com/summerscar/live2dDemo</a></p>
+<p>还可以自行搭建后端api，并增加模型（需要修改的内容比较多，此处不再赘述）：<br><a href="https://github.com/fghrsh/live2d_api" target="_blank" rel="noopener">https://github.com/fghrsh/live2d_api</a><br><a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">https://github.com/xiazeyu/live2d-widget-models</a><br><a href="https://github.com/xiaoski/live2d_models_collection" target="_blank" rel="noopener">https://github.com/xiaoski/live2d_models_collection</a></p>
+<p>除此之外，还有桌面版本：<br><a href="https://github.com/amorist/platelet" target="_blank" rel="noopener">https://github.com/amorist/platelet</a><br><a href="https://github.com/akiroz/Live2D-Widget" target="_blank" rel="noopener">https://github.com/akiroz/Live2D-Widget</a></p>
+<p>另外，点击看板娘的纸飞机按钮，会出现一个彩蛋，这来自于<a href="http://www.websiteasteroids.com" target="_blank" rel="noopener">WebsiteAsteroids</a>。</p>
+<h2 id="更多-More"><a href="#更多-More" class="headerlink" title="更多 More"></a>更多 More</h2><p>Live2D官方网站：<br><a href="https://www.live2d.com/en/" target="_blank" rel="noopener">https://www.live2d.com/en/</a><br><a href="https://live2d.github.io" target="_blank" rel="noopener">https://live2d.github.io</a></p>
+<p>可以在官方网站下载、打包SDK，以获取更多的功能。具体操作是：</p>
+<ul>
+<li>点击Cubism SDK for Web，下载相关文件；</li>
+<li>解压并进入目录，执行<code>npm install</code>；</li>
+<li>执行<code>npm run build-sample</code>。</li>
+</ul>
+<h2 id="许可证-License"><a href="#许可证-License" class="headerlink" title="许可证 License"></a>许可证 License</h2><p>Released under the GNU General Public License v3<br><a href="http://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">http://www.gnu.org/licenses/gpl-3.0.html</a></p>
+<h2 id="更新-Update"><a href="#更新-Update" class="headerlink" title="更新 Update"></a>更新 Update</h2><p>2018年10月31日，由fghrsh提供的原API停用，请更新至新地址。参考文章：<br><a href="https://www.fghrsh.net/post/170.html" target="_blank" rel="noopener">https://www.fghrsh.net/post/170.html</a></p>
 
         </div>
         <!-- .entry-content -->
@@ -463,36 +504,19 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2019/10/17/191017Hexo个人博客绑定域名/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/3.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/3.jpg">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                Hexo个人博客绑定域名</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
         
           
-            <div class="post-nepre half next">
+            <div class="post-nepre full next">
           
-            <a href="/2019/06/04/GNN学习 【01】——DGL/" rel="next">
+            <a href="/2019/10/20/191020如何解决latex编码问题Unicode character ​ (U+200B)/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/170605/130458-149663909840b3.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/170605/130458-149663909840b3.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/4.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/4.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                GNN学习 【01】——DGL</h3>
+                如何解决latex编码问题Unicode character (U+200B)</h3>
                 <hr>
               </div>
             </a>
@@ -630,6 +654,7 @@
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
 <script src="/js/botui.js"></script>
+<!-- 看板娘 -->
 <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
 <!-- 不蒜子 网页计数器 -->
 <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
