@@ -506,12 +506,15 @@
         <div class="entry-content">
           <h2 id="3-树"><a href="#3-树" class="headerlink" title="3 树"></a>3 树</h2><h3 id="3-1-树和二叉树"><a href="#3-1-树和二叉树" class="headerlink" title="3.1 树和二叉树"></a>3.1 树和二叉树</h3><h4 id="3-1-1-树"><a href="#3-1-1-树" class="headerlink" title="3.1.1 树"></a>3.1.1 树</h4><p>在树的结构中，树的定义如下。<br>树（tree）是n（n&gt;=0）个节点的有限集，当n=0时，称为空树。在任意一个非空树中，有如下特点：</p>
 <p>1、有且仅有一个特定的称为根的节点。<br>2、当n&gt;1时，其余节点可分为m(m&gt;0)个互不相交的有限集，每一个集合本身又是一个树，并称为根的子树。</p>
-<pre><code>【相关节点】
-* 根节点(root)
-* 叶子节点(leaf):没有孩子的节点
-* 父节点
-* 孩子节点
-* 兄弟节点</code></pre><p><img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn/img/post/11171.png" alt></p>
+<p>  【相关节点】</p>
+<ul>
+<li>根节点(root)</li>
+<li>叶子节点(leaf):没有孩子的节点</li>
+<li>父节点</li>
+<li>孩子节点</li>
+<li>兄弟节点</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn/img/post/11171.png" alt></p>
 <p>树的最大层级树，被称为树的高度或深度。<br><img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn/img/post/11172.png" alt></p>
 <h4 id="3-1-2-二叉树"><a href="#3-1-2-二叉树" class="headerlink" title="3.1.2 二叉树"></a>3.1.2 二叉树</h4><p>树的每个节点最多有2个孩子节点。<br>树的一种特殊形式。树的每个节点<strong>最多有2个孩子节点</strong>。</p>
 <p>二叉树的两个孩子节点，一个被称为<strong>左孩子</strong>，一个被称为<strong>右孩子</strong>。这两个孩子节点的顺序是固定的。</p>
@@ -520,9 +523,12 @@
 <p><strong>完全二叉树</strong>：对一个有n个节点的二叉树，按层级顺序编号，则所有节点的编号为从1到n。如果这个树所有节点和同样深度的满二叉树的编号为从1到n的节点位置相同，则这个二叉树为完全二叉树。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/keaidoo/cdn/img/post/11174.png" alt></p>
 <p>一棵树，若为满二叉树，那么一定是完全二叉树。反之，不一定。</p>
-<pre><code>**在内存中存储**：
-* **链式存储结构**：一个节点含数据data，指向左孩子的left指针，指向右孩子的right指针。
-* **数组**：按照层级顺序把二叉树的节点放到数组中对应的位置上。如果某一个节点的孩子为空，则数组的相应位置也空出来。</code></pre><p>为什么这么设计？可以更方便的定位孩子节点、父节点。<br>若父节点的下标是parent，那么左孩子节点下标是2<em>parent+1，右孩子节点下标是2</em>parent+2。<br>反之，若左孩子节点下标是leftChild,那么父节点下标是(leftChild - 1)/2。<br>稀疏二叉树，用数组表示会很浪费空间。</p>
+<p><strong>在内存中存储</strong>：</p>
+<ul>
+<li><strong>链式存储结构</strong>：一个节点含数据data，指向左孩子的left指针，指向右孩子的right指针。</li>
+<li><strong>数组</strong>：按照层级顺序把二叉树的节点放到数组中对应的位置上。如果某一个节点的孩子为空，则数组的相应位置也空出来。</li>
+</ul>
+<p>为什么这么设计？可以更方便的定位孩子节点、父节点。<br>若父节点的下标是parent，那么左孩子节点下标是2<em>parent+1，右孩子节点下标是2</em>parent+2。<br>反之，若左孩子节点下标是leftChild,那么父节点下标是(leftChild - 1)/2。<br>稀疏二叉树，用数组表示会很浪费空间。</p>
 <h4 id="3-1-3-二叉树的应用"><a href="#3-1-3-二叉树的应用" class="headerlink" title="3.1.3 二叉树的应用"></a>3.1.3 二叉树的应用</h4><p>二叉树的应用：查找操作、维持相对顺序。</p>
 <ul>
 <li>查找：二叉查找树。左子树上所有节点都小于根节点，右子树上所有节点都大于根节点。左右子树也都是二叉查找树。</li>
