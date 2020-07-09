@@ -416,7 +416,7 @@
           </a>
         </span>
         <span>
-          <a href="">可爱多</a>
+          <a href="">可1多</a>
         </span>
         <span class="bull">
         ·</span>
@@ -434,73 +434,220 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="1、跳台阶"><a href="#1、跳台阶" class="headerlink" title="1、跳台阶"></a>1、跳台阶</h2><h3 id="题目描述（递归）"><a href="#题目描述（递归）" class="headerlink" title="题目描述（递归）"></a>题目描述（递归）</h3><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
-<h3 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h3><p><a href="https://www.nowcoder.com/practice/8c82a5b80378478f9484d87d1c5f12a4?tpId=13&amp;tqId=11161&amp;rp=1&amp;ru=%2Fta%2Fcoding-interviews&amp;qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking&amp;tPage=1" target="_blank" rel="noopener">https://www.nowcoder.com/practice/8c82a5b80378478f9484d87d1c5f12a4?tpId=13&amp;tqId=11161&amp;rp=1&amp;ru=%2Fta%2Fcoding-interviews&amp;qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking&amp;tPage=1</a></p>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>找规律<br>n=1:1种方法；<br>n=2:2种方法；<br>n=3:3种方法；<br>n=4:5种方法；<br>n=5:8种方法；<br>n=6:13种方法；<br>所以，本质上是斐波那契数列：f(n)=f(n-1)+f(n-2)。</p>
-<pre><code>function jumpFloor(number)
-{
-    if (number &lt;=2){
-        return number;
-    }else{
-        var s0=1;
-        var s1=2;
-        for (var i=3;i&lt;=number;i++){
-            s2=s1+s0
-            s0=s1;
-            s1=s2
-        }
-        return s2
-    }
+          <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>Spatiotemporal Multi-Graph Convolution Network for Ride-Hailing Demand Forecasting</p>
+<h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>Xu Geng, Yaguang Li, Leye Wang, Lingyu Zhang, Qiang Yang, Jieping Ye, Yan Liu</p>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>区域级需求预测是网约车服务中的一项重要任务。准确的叫车需求预测可以指导车辆调度，提高车辆利用率，缩短等待时间，缓解交通拥堵。这项任务由于区域之间的时空依赖关系复杂，因此具有挑战性。现有方法主要集中在模拟空间相邻区域之间的欧几里得相关性，同时我们观察到，可能遥远区域之间的非欧几里得成对相关性对于准确预测。<br>本文提出了一种用于网约车需求预测的新型深度学习模型——时空多图卷积网络(ST-MGCN)。</p>
+<ul>
+<li>我们在网约车需求预测中识别区域之间的非欧几里德相关性，并建议使用多个图对它们进行编码。然后我们进一步利用所提出的多图卷积来明确地对这些相关性进行建模。</li>
+<li>为了利用全局上下文信息对时间关系进行建模，我们进一步提出了上下文门控式递归神经网络(CGRNN)，该网络利用上下文感知的门控机制对递归神经网络进行扩充，以重新加权不同的历史观测值。</li>
+<li>我们在两个真实的大型网约车需求数据集上评估了所提出的模型，并观察到比最先进的基线有超过10%的一致性改进。</li>
+</ul>
+<h2 id="论文背景"><a href="#论文背景" class="headerlink" title="论文背景"></a>论文背景</h2><p>据 Uber 统计，2018年，全年的网约车使用次数达180亿次，超过全球人口的两倍。准确的网约车订单预测，能够更好的调度车辆，提高车辆的利用率，缓解交通拥堵，具有重要的经济和社会意义。</p>
+<p>网约车需求量预测问题可以通过其数据建模方式来理解。以1小时为时间单位，1km*1km 的网格为空间单位，某城市某个小时订单量可以用如下所示的2d格点图片来表示，每个格点的数值是在该时间段内该区域所产生的滴滴打车的订单数的总和。那么所谓网约车需求量预测，就是已知过去几个小时每个格点的订单数，预测未来的订单数。</p>
+ <center>
+<img style="border-radius: 0.3125em;
+box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="AAAI2019GengLWZYYL/grid.jpeg">
+<br>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+display: inline-block;
+color: #999;
+padding: 2px;">基于 grid 建模数据的示意图</div>
+</center>
 
-}</code></pre><h2 id="2、暴力跳台阶"><a href="#2、暴力跳台阶" class="headerlink" title="2、暴力跳台阶"></a>2、暴力跳台阶</h2><h3 id="题目描述（贪心）"><a href="#题目描述（贪心）" class="headerlink" title="题目描述（贪心）"></a>题目描述（贪心）</h3><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
-<h3 id="题目链接-1"><a href="#题目链接-1" class="headerlink" title="题目链接"></a>题目链接</h3><p><a href="https://www.nowcoder.com/practice/22243d016f6b47f2a6928b4313c85387?tpId=13&amp;&amp;tqId=11162&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">https://www.nowcoder.com/practice/22243d016f6b47f2a6928b4313c85387?tpId=13&amp;&amp;tqId=11162&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking</a></p>
-<h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h3><p>链接：<a href="https://www.nowcoder.com/questionTerminal/22243d016f6b47f2a6928b4313c85387?f=discussion" target="_blank" rel="noopener">https://www.nowcoder.com/questionTerminal/22243d016f6b47f2a6928b4313c85387?f=discussion</a></p>
-<p>关于本题，前提是n个台阶会有一次n阶的跳法。分析如下:</p>
-<pre><code>f(1) = 1
 
-f(2) = f(2-1) + f(2-2)         //f(2-2) 表示2阶一次跳2阶的次数。
+<p>实际上，直接做网约车需求量预测的文章并不多，但这个问题可以归结为交通流预测，并且本文的对比算法也是交通流预测模型，在同一网约车数据集上的表现。此外，交通流预测属于城市计算问题（urban computing）Yu Zheng. 2014. Urban Computing Concepts, Methodologies, and Applications。这个概念由当时还在微软亚洲研究院的郑宇提出。与我们生活息息相关的很多问题都可以归结为城市计算问题。比如车辆调度问题，输电网优化，物流及供应链管理，雾霾预测等。它们的特点是同时具有时间和空间两个维度的信息。</p>
+<h2 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h2><p>本文要解决的问题是，如何能够更好的建模多个区域之间所存在的非欧且多模态的时间和空间相关性，以实现高准确率的网约车需求量预测。</p>
+<p>问题的数学表述如下，输入连续 $T$个时刻的格点集合$ X$（格点的值为订单数），输出下一时刻的订单数，通过训练学习得到该映射函数 $f$。</p>
+<p>$$<br>[X^{t-T+1},…,X^{t}]\stackrel{f(.)}{\longrightarrow}{X^{t+1}}<br>$$<br>这里的多模态可以理解为多重维度的关系。如下图所示，图中区域1和区域2在空间上是相邻关系，他们可能会有相似的约车量。区域1和区域3在功能上是相似的，可能在用车的 pattern 上存在比较高的相似性。区域4与区域1在同一条路旁边，同理，他们也会存在某种约车的相似性。</p>
+ <center>
+<img style="border-radius: 0.3125em;
+box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="AAAI2019GengLWZYYL/1.png">
+<br>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+display: inline-block;
+color: #999;
+padding: 2px;">图1:区域间不同相关性的例子。预测区域1、空间相邻区域2的需求时，认为功能相似区域3和交通连通区域4更为重要，而距离较远和不相关区域5的相关性较小。</div>
+</center>
 
-f(3) = f(3-1) + f(3-2) + f(3-3) 
+<p>此外，订单数还与时间紧密相关，比如早晚高峰，节假日等，会对用车数产生比较大的影响，且会呈现某种周期性。所以，作者总结了这个问题所面临的两个挑战。空间上，需要学习区域间存在的多模态非欧相关性。时间上，需要学习复杂的多个时刻的时间依赖关系。</p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><h3 id="1、城市计算中的时空预测"><a href="#1、城市计算中的时空预测" class="headerlink" title="1、城市计算中的时空预测"></a>1、城市计算中的时空预测</h3><p>非欧式结构化数据也存在于城市计算中。通常，基于站点的预测任务，比如基于站点的出租车需求预测，基于站点的自行车流量预测，是非欧式的，因为数据格式不再是矩阵，卷积神经网络变得不那么有用了。人工特征工程或图卷积网络是处理非欧式结构数据的最新技术。与以往的研究不同，ST-MGCN将区域间的成对关系编码为语义图。虽然ST-MGCN是为基于区域的预测而设计的，但区域间关系的不规则性使其成为非欧式数据的预测问题。然而，这些方法都没有明确地对区域间的非欧式成对关系建模。在这项工作中，ST-MGCN利用提出的多图卷积融合相关区域的特征，能够从不同角度关联区域的需求值进行预测。</p>
+<p>时空数据预测的相关工作可以分为两类：</p>
+<ol>
+<li>将数据建模成为 2d image 上的格点，使用 CNN 的方法进行预测；</li>
+<li>将数据建模到 graph 的节点上，基于图的方法进行预测。建模称为 2d image 的方法无法处理非欧数据（CNN 所处理的规整的网格是欧式空间）。<br>假如就这个问题而言，我们建模为 1km*1km 的网格，那么整个城市不同区域使用的分辨率都是相同的，如果我们希望在市中心用更高的分辨率，郊区用更低的分辨率，或者加入某些兴趣点，这种方法是无法实现的。而现有基于 graph 的方法，虽然在区域建模上具有很高灵活性，但是无法建模上述区域间多模态的相关性。</li>
+</ol>
+<h3 id="2、图卷积"><a href="#2、图卷积" class="headerlink" title="2、图卷积"></a>2、图卷积</h3><p>图卷积网络(GCN)定义在一个图$G={V, A}$上，其中$V$是所有顶点的集合，$A\in \mathbb{R}^{|V|×|V|}$是邻接矩阵。GCN能够从变体非欧几里得结构中提取具有不同接收域的局部特征。<br>拉普拉斯矩阵$L=I-D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$，$A$是邻接矩阵，D是对角度矩阵，$I$是单位矩阵。<br>$$<br>X_{l+1}=\sigma\bigg(\sum_{k=0}^{K-1} a_{k}L^k\mathbf{X}_l\bigg)  \quad\quad（1）<br>$$</p>
+<p>$X_{l}$表示在第$l$层特征,$a_{k}$是可训练的系数,$L_k$是第k个图拉普拉斯算子矩阵的影响,σ是激活函数。</p>
+<h3 id="3、Channel-wise-attention"><a href="#3、Channel-wise-attention" class="headerlink" title="3、Channel-wise attention"></a>3、Channel-wise attention</h3><p>Channel-wise attention对channel做注意力机制，Channel-wise attention提出的初衷是学习每个channel的权重，以便找到最重要的channel，并通过给出更高的权重来强调它们。</p>
+<p>$$<br> z^{(c)}=F_{pool}(X_{:,:,c})=\frac{1}{WH}\sum_{i=0}^{W} \sum_{j=0}^{H}X_{i,j,c}\quad for\quad c= 1,2,…,C<br>  $$<br>$$<br>  s=\sigma(W_{2}{\delta}(W_{1}z)) \quad\quad\quad\quad(2)<br>  $$<br>  $$<br>  \widetilde X_{:,:,c}=X_{:,:,c} {\circ}s_c\quad for\quad c= 1,2,…,C<br>  $$</p>
+<p>$F_{pool}$是一个全局平均池化操作，它将每个通道总结为一个标量$z_c$，其中$c$是通道索引。然后利用注意力运算对向量$z$进行非线性变换，生成自适应权值$s$, $W_1和W_2$相应的权重,$δ,σ$分别是$ReLU$和$sigmoid$函数。然后，通过channel方向的点积将权值$s$应用于输入。最后，基于学习权值对输入通道进行缩放。在本文中，采用了Channel-wise attention的思想，并将其推广到一系列图之间的时间依赖关系建模中。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>这篇论文的工作思路如下：</p>
+<ol>
+<li><p>首先将区域间的非欧几里得两两相关编码到多个图中，然后用多图卷积（multi-graph convolution）来建模其相关性。</p>
+</li>
+<li><p>然后用全局上下文信息（global contextual information）来建模时序信息，并进一步提出了上下文门控循环神经网络模型（contextual gated recurrent neural network），给历史数据分配权重。</p>
+</li>
+</ol>
+<hr>
+<p>网约车需求预测，$T$个点预测1个点。<br>空间依赖建模上：以图的形式表示数据，从空间地理关系、区域功能相似度、区域交通连通性三个角度构造了三个不同的图，提出了多图卷积，分别用$ k$ 阶 ChebNet 对每个图做图卷积，然后将多个图的卷积结果进行聚合(sum, average 等)成一个图；<br>时间依赖建模上：提出了融合背景信息的 Contextual Gated RNN (CGRNN)，用 ChebNet 对每个结点卷积后，得到他们的邻居表示，即每个结点的背景信息表示，与原结点特征拼接，用一个两层全连接神经网络计算出 $T$ 个权重，将权重乘到历史 $T$个时刻的图上，对历史值进行缩放，然后用一个共享的 RNN，针对每个结点形成的长度为$T$ 的时间序列建模，得到每个结点新的时间表示。最后预测每个点的网约车需求，对比的深度学习方法有上述的 DCRNN 和 STGCN 两个，数据是北京和上海的网约车需求数据。</p>
+<h3 id="方法描述"><a href="#方法描述" class="headerlink" title="方法描述"></a>方法描述</h3><p><strong>（一）区域级别的网约车需求预测</strong><br>将全网需求网格化，利用过去$T$个时段预测$T+1$个时段。所提出的模型ST-MGCN的系统架构如图2所示。我们将区域间三种关系类型表示为多个图，图的顶点表示区域，边表示区域间的成对关系。首先，时间上，我们使用提出的上下文门控循环神经网络(CGRNN)考虑全局上下文信息，对不同时间的观测结果进行汇总，将多个时间步融合为一个时间步。然后，空间上，应用多图卷积来捕捉区域间不同类型的相关性。最后，利用全连接层进行特征融合转化为预测。</p>
+<p>作者基于对网约车需求量预测问题的理解以及先验知识，设计了如下的算法框架。</p>
+ <center>
+<img style="border-radius: 0.3125em;
+box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="AAAI2019GengLWZYYL/2.png">
+<br>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+display: inline-block;
+color: #999;
+padding: 2px;">图2:时空多图卷积网络(ST-MGCN)系统架构。</div>
+</center>
 
-...
 
-f(n-1) = f(0) + f(1)+f(2)+f(3) + ... + f((n-1)-1) = f(0) + f(1) + f(2) + f(3) + ... + f(n-2)
 
-f(n) = f(0) + f(1) + f(2) + f(3) + ... + f(n-2) + f(n-1) = f(n-1) + f(n-1)
+<p><strong>（二）空间依赖关系建模</strong><br>所谓多图卷积，是指对空间上的多种相关关系分别进行图卷积，再进行特征融合。</p>
+<!-- 论文框架主要分为三部分：
+**第一步：**图建立**：将每一帧的数据建模成为三张graph。每张graph上的节点相同，即城市的网格化划分。连边通过如下图所示的规则进行构建。根据不同维度的相关性（邻域信息、功能相似度、交通连通性）确定节点之间的连边值.** -->
 
-可以得出：
-f(n)- f(n-1) = f(n-1) 
-f(n) = 2*f(n-1)</code></pre><p>法一：</p>
-<pre><code>function jumpFloorII(number)
-{
-    var s=1
-    for(var i=1;i&lt;number;i++){
-        s=2*s       
-    }
-    return s
-}</code></pre><p>法二：</p>
-<pre><code>function jumpFloorII(number)
-{
-    return Math.pow(2, number - 1);
-}</code></pre><h2 id="3、调整数组顺序奇数位于偶数前面"><a href="#3、调整数组顺序奇数位于偶数前面" class="headerlink" title="3、调整数组顺序奇数位于偶数前面"></a>3、调整数组顺序奇数位于偶数前面</h2><h3 id="题目描述（数组）"><a href="#题目描述（数组）" class="headerlink" title="题目描述（数组）"></a>题目描述（数组）</h3><p>输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。</p>
-<h3 id="题目链接-2"><a href="#题目链接-2" class="headerlink" title="题目链接"></a>题目链接</h3><p><a href="https://www.nowcoder.com/practice/beb5aa231adc45b2a5dcc5b62c93f593?tpId=13&amp;&amp;tqId=11166&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">https://www.nowcoder.com/practice/beb5aa231adc45b2a5dcc5b62c93f593?tpId=13&amp;&amp;tqId=11166&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking</a></p>
-<h3 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h3><p>链接：<a href="https://www.nowcoder.com/questionTerminal/beb5aa231adc45b2a5dcc5b62c93f593?answerType=1&amp;f=discussion" target="_blank" rel="noopener">https://www.nowcoder.com/questionTerminal/beb5aa231adc45b2a5dcc5b62c93f593?answerType=1&amp;f=discussion</a></p>
-<h4 id="1）开辟新数组保存法"><a href="#1）开辟新数组保存法" class="headerlink" title="1）开辟新数组保存法"></a>1）开辟新数组保存法</h4><p>创建两个数组，一个用来存奇数，一个用来存偶数，最后合并。</p>
-<pre><code>function reOrderArray(array)
-{
-    var a = [];
-    var b = [];
-    for(var i=0;i&lt;array.length;i++){
-        if (array[i]%2==1){
-            a.push(array[i])
-        }else{
-            b.push(array[i])
-        }
-    }
-    return a.concat(b)
-}</code></pre><h4 id="2）不开辟新数组"><a href="#2）不开辟新数组" class="headerlink" title="2）不开辟新数组"></a>2）不开辟新数组</h4><p>1.用两个下标i,j进行遍历;<br>2.当i走到偶数时停下，并让j从i的后一个元素开始遍历；(若i走到队尾则循环结束)<br>3.若j所指的是偶数则继续前进，j遇到奇数则停下(如果j都没遇到奇数则在队尾停下，结束。)。<br>4.此时j所指的是奇数，i所指的是偶数(i到j-1都是偶数)。<br>5.则可以用临时变量temp保存j对应的值，然后从j-1开始到i，挨个后移一位。<br>6.将temp保存的值插入到i的位置。</p>
-<h4 id="3）优化："><a href="#3）优化：" class="headerlink" title="3）优化："></a>3）优化：</h4><p>冒泡排序也可以保证相对位置不变，所以用冒泡排序写起来会更方便。</p>
+<p><strong>1.领域图</strong>: 区域的邻域是根据空间邻近度来定义的。我们通过在一个3×3的网格中将一个区域与它的8个相邻区域相连接来构造图。<br>$$<br>  A_{N,ij}=\begin{cases}<br>      1 &amp; \text{if $v_i$ and $v_j$ are adjacent } \<br>      0 &amp;\text{otherwise}<br>  \end{cases}  \quad\quad (3)<br>$$<br><strong>2.功能相似图</strong>:当预测一个地区时，很自然地会参考与这个地区在功能上相似的其他地区。区域功能可以用每个点(区域)周围的POI来描述，两个顶点(区域)之间的边定义为POI相似性:</p>
+<p>$$<br>  A_{S,ij}=sim(P_{vi}、P_{vj})\in[0,1] \quad\quad(4)<br>  $$</p>
+<p>其中$P_{vi}、P_{vj}$分别为区域$v_i和v_j$的POI向量，其维数等于POI类目数，每个条目表示区域内特定POI类目数。</p>
+<p><strong>3.交通连通图</strong>:在进行时空预测时，交通系统也是一个重要因素。直观地说，那些地理上遥远但又容易到达的区域可以相互关联。这种连接是由高速公路、高速公路或地铁等公共交通诱导的。在这里，我们将这些道路直接相连的区域定义为“连通”，对应的边定义为:<br>$$<br>  A_{C,ij}=max(0,conn(v_i,v_j)− A_{N,ij})\in[0,1] \quad\quad(5)<br>  $$<br>其中$conn(u, v)$为$v_i和v_j$之间连接性的指示函数。注意，邻域边缘被从连通图中删除，以避免冗余的相关，也会导致稀疏图。</p>
+<p><strong>4.利用多图卷积对时空依赖关系进行建模</strong></p>
+<p>利用构建的上述三种类型的图，我们使用如下公式进行卷积，$f(A;θ_i)$表示拉普拉斯矩阵。</p>
+<p>$$<br>X_{l+1}=\sigma\bigg(\coprod_{A \in\mathbb A} f(A;θ_i){X}_l{W_l}\bigg)  \quad\quad（6）<br>$$</p>
+<p>其中$X_{l}\in{\mathbb{R}^{|V |×P_l}}$,$X_{l+1}\in{\mathbb{R}^{|V |×P_{l+1}}}$分别为$l$层和$l+1$层$|V|$区域的特征向量。其中，$\sigma$为激活函数，$\coprod$为聚合函数，如sum、max、average等。$\mathbb A$为图的集合，$f(A;θ<em>i)\in |V |×|V|$表示基于图$A\in\mathbb A$用$θ_i$参数化的不同样本的聚合矩阵，而$W_l\in\mathbb R^{P_l×P</em>{l+1}}$表示特征变换矩阵，<br>在实际过程中，$f(A;θ_i)$选为拉普拉斯矩阵$L$的$K$阶多项式函数，（本文$f(A;θ_i)$中图拉普拉斯矩阵度$K=2$,$\coprod$为聚合函数为sum）图3显示了图卷积层示例。$K$表示$v_i$通过$K$步能够到达$v_j$。在卷积运算方面，$k$定义了空间特征提取时感知域的大小。</p>
+ <center>
+<img style="border-radius: 0.3125em;
+box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="AAAI2019GengLWZYYL/fig3.jpg">
+<br>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+display: inline-block;
+color: #999;
+padding: 2px;">图3:集中于黑色顶点的ChebNet图卷积的示例。
+左:中心区域为黑色。一跳邻居被标记为黄色，而两跳邻居被标记为红色。
+中:随着图形拉普拉斯阶数的增加，接收场增大(绿色标记)。
+右:这一层的输出是带有从1到K的度值的图形变换之间的和。</div>
+</center>
 
+
+<p>每一帧数据做图卷积的方法是使用 k-ordered ChebNet。这个方法与我们熟知的图卷积网络 GCN 的区别是，GCN 可以简单地认为是 1-ordered ChebNet，只是汇聚一阶邻居。如文中给出的示意图所示。黑色是中心节点，黄色是 1阶邻居，红色是 2阶邻居。通过 k-ordered ChebConv，可以实现 $k$阶领域的信息交互。使用$k$ 层的 GCN 堆叠也可以实现 k 阶邻域信息角度，但是随着层数增加，训练难度加大。所以，这可能是作者做模型选择的考虑点之一。</p>
+<p>基于多图卷积的空间依赖关系建模并不局限于上述三种类型的区域关系，它可以很容易地扩展到其他区域关系以及其他时空预测问题的建模。它通过区域间的关系提取特征，对空间依赖关系进行建模。在$K$较小的情况下，特征提取将重点放在较近的区域，增加$K$值或叠加多个卷积层的最大程度将增加感知域，从而鼓励模型捕获更多的全局依赖关系。</p>
+<p><strong>（三）时间相关的建模</strong></p>
+<p>即通过多步处理，将多个时间步的信息融合到一张图上。这一块比较难理解，首先解释一下维度关系。对于图4左上角的$T×|V|×P$，$T$ 代表$T$个时间步，其中每个时间步为一个方块，该方块的高即$V$代表所有的节点，宽即$P$代表每个节点graph embedding 出来的高维表示。</p>
+<p>图4左下角和图4左上角其实是一样的数据，只不过，左下角的数据是对每个时间步加了权重，所以他画的有的方块厚有的方块薄，即所谓的channel-wise attention，而其中所使用的权重，便是根据channel-wise attention中的公式7、8、9得到的，比较复杂（公式7图卷积，公式8对图卷积结果进行池化，池化结果利用公式9得到权重）。</p>
+<p>图4右边他说的共享权重的RNN，其实就是将多张图经过RNN融合成一张图。按道理，对于每个节点，使用过去T个时间步预测未来T+1个时间步，应该训练一个RNN，50个节点要训练50个RNN，但是文章为了简化模型，对所有节点应用一个RNN模型，右边中间的黑色方块，是把RNN展开了，代表T个时间步，最后输出一个时间步，即融合为一张图。（其实共享权重的RNN效果肯定是不如对每个节点训练一个RNN效果好的，但是文章中说了这样做的原因：区域间共享RNN是为所有区域找到一个通用的聚合规则，从而促进模型的泛化，降低模型的复杂度）</p>
+<center>
+<img style="border-radius: 0.3125em;
+box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="AAAI2019GengLWZYYL/fig4.png">
+<br>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+display: inline-block;
+color: #999;
+padding: 2px;">图4:使用上下文门控回归神经网络(CGRNN)进行时间相关性建模。它首先使用输入的全局平均池和每个观测的图卷积输出生成区域描述。然后将总结出的向量z转换成权重，用于缩放每个观测值。最后，应用一个跨所有区域的共享RNN层将每个区域的门控输入序列聚合到单个向量中。</div>
+</center>
+详细解释：
+
+<p>此部分提出了一种基于上下文门控的循环神经网络(CGRNN)来模拟不同时间点下观测值之间的相关性。CGRNN利用具有上下文感知门控机制的RNN将上下文信息集成到时态建模中，其体系结构如图4所示。</p>
+<p>首先，将相关区域的信息视为上下文信息，利用对应的图拉普拉斯矩阵，通过最大度$K’$图卷积运算$F_{\mathcal{G}}^{K’}$进行卷积(公式7)（本文$K’=1$）。上下文门控机制的设计是先进行图卷积再进行池化，以使池化操作包含拓扑信息。我们有T个时间观察，$X^{(t)}\in{\mathbb{R}^{|V |×P}}$表示第$t$个观察,其中P为特征维数，如果特征只包含阶数，P为1。</p>
+<p>$$<br>  \hat X^{(t)}=[X^{(t)} ,F_{\mathcal{G}}^{K’}{ X^{(t)}  } ] \quad for\quad t= 1,2,…,T\quad\quad(7)<br>  $$</p>
+<p>pooling 操作如下所示，将 $t$时刻 graph 上所有节点的值都加起来，然后除以节点的个数。使用全局平均池化$F_{pool}$将所有节点的信息汇总为一个节点 (公式8)。<br>$$<br> z^{(t)}=F_{pool}(\hat X^{(t)})=\frac{1}{|V|}\sum_{i=1}^{|V|}\hat X^{(t)}_{i,:}\quad for\quad t= 1,2,…,T\quad\quad(8)<br>  $$<br>然后利用注意力运算对向量z进行非线性变换，生成自适应权值 $s$ （公式9）, $W_1$ 和 $W_2$相应的权重, $δ,σ$是分别ReLU和sigmoid函数。</p>
+<p>$$<br>  s=\sigma(W_{2}{\delta}(W_{1}z)) \quad\quad(9)<br>  $$</p>
+<p>最后，将$s$应用于对每个时间步进行加权(公式10)。<br>$$<br>  \widetilde X^{(t)}=X^{(t)} {\circ}s^{(t)} \quad for\quad t= 1,2,…,T\quad\quad(10)<br>  $$</p>
+<p>得到对时间步进行加权后的多张图后，使用权值共享RNN将多张图融合为一张图 (公式11);</p>
+<p>$$<br>  H_{i,:}=RNN( \widetilde X^{(1)}<em>{i,:},…, \widetilde X^{(T)}</em>{i,:};W_3)\quad for\quad i= 1,…,|V|\quad(11)<br>  $$<br>经过上下文门控后，应用一个具有跨所有区域权值$W_3$的共享RNN层，将一个区域的门控输入序列聚合成一个单独的向量$H_i$。(公式11)<br>区域间共享RNN的直觉是为所有区域找到一个通用的聚合规则，从而促进模型的泛化，降低模型的复杂性。</p>
+<p>小结：<br>将$T$个时间步的历史数据融合为一张图，这里所谓的 Contextual Gated 是指将历史数据每一帧通过图卷积网络进行数据融合，并且通过全局 pooling 得到该小时的全局信息。这个全局信息再与原来的$T$个时间步的数据做点乘，得到了带权重的历史数据。然后迭代地输入到 RNN 中进行时间维度的信息融合，最终得到一张图。这里的 RNN 是权值共享的，也就是对于图上的每个顶点都过同一个 RNN，它们的所训练的是一套参数。这样的好处有两点：1. 学习更加普遍的时序维度的汇聚方法。2. 减少模型复杂程度，使得更容易训练。</p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><h3 id="实验设置"><a href="#实验设置" class="headerlink" title="实验设置"></a>实验设置</h3><h4 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h4><p>北京和上海两个真实的大规模网约车数据集上进行了实验。<br>这两个数据集都是在2017年3月1日至2017年12月31日这段时间内，在网约车订单的主要城市区域内收集的。<br>训练集：2017年3月1日至2017年7月31日。<br>验证集：2017年8月1日至2017年9月30日。<br>测试集：2017年10月1日至2017年12月31日。<br>POI数据收集于2017年，包含13个主要POI类别。每个区域都与一个POI向量相关联，该向量的条目是某个POI类别的实例数。道路网络数据用于交通系统的可行性评估是由OpenStreetMap提供。</p>
+<h4 id="基准方法"><a href="#基准方法" class="headerlink" title="基准方法"></a>基准方法</h4><ul>
+<li>Historical Average (HA):将网约车需求建模为一个季节过程，并使用前几个季节的平均值作为预测。使用的周期是1周，预测是基于前几周同一时间的汇总数据。</li>
+<li>LASSO,Ridge</li>
+<li>Auto-regressive model (VAR,STAR)</li>
+<li>Gradient boosted machine (GBM)</li>
+<li>ST-ResNet (Zhang, Zheng, and Qi 2017)ST-ResNet是一个基于cnn的交通流预测框架。模型使用带有残差连接的CNN来捕捉趋势、周期性和紧密度信息。<ul>
+<li>DMVST-Net (Yao et al. 2018b)DMVST-Net多视图建立深度学习方法预测出租车的需求量，它由三种不同的视图组成:时间视图、空间视图、语义视图。分别采用LSTM、CNN和嵌入图建模。</li>
+<li>DCRNN, ST-GCN: Both DCRNN (Li et al. 2018c) and ST-GCN (Yu, Yin, and Zhu 2018) </li>
+</ul>
+</li>
+</ul>
+<h4 id="参数设置"><a href="#参数设置" class="headerlink" title="参数设置"></a>参数设置</h4><p>在实验中，城市地图划分为大小为1km×1km的网格，生成区域集$V$。北京有1296个地区，上海有896个地区。网络的输入由5个历史观测值组成，包括3个最近时间分量、1个周期分量和1个最新的趋势分量。在构建交通连接度图时，考虑了高速公路、高速公路和地铁。只要有一条高速公路把两个地区直接连接起来，就被认为是“连通”的。<br>图的拉普拉斯算子与度K等于2,隐藏层数为3,每一层应用64个隐藏单元和L2正则化，权重衰减等于1e-4。CGRNN中的图的卷积度K’等于1。使用ReLU作为图卷积网络的激活。ST-MGCN的学习率设置为2e-3，并使用验证数据集上的早期停止。</p>
+<h3 id="实验结果及分析"><a href="#实验结果及分析" class="headerlink" title="实验结果及分析"></a>实验结果及分析</h3><h4 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h4><ul>
+<li><p>(1) 表1:网约车需求预测不同方法的性能比较。ST-MGCN在两个数据集上的所有指标都达到了最佳性能。<br><img src="AAAI2019GengLWZYYL/r1.png" alt="avatar"><br>我们在两个数据集中观察到以下现象:<br>(1)基于深度学习的方法，包括ST-ResNet、DMVST-Net、ST-GCN和提出的ST-MGCN能够建模非线性时空相关性，通常优于其他基线;(2) ST-MGCN在两个数据集的所有指标方面都取得了最好的性能，在相对误差减少方面至少比第二最佳基线高出10%，这表明所提出的时空相关性建模方法的有效性;(3)与其他深度学习模型相比，ST-MGCN降低了方差。</p>
+</li>
+<li><p>(2) 表2:空间相关建模对北京数据集的影响。删除任何组件都会导致显著的误差增加。<br><img src="AAAI2019GengLWZYYL/r2.png" alt="avatar"></p>
+</li>
+</ul>
+<p>-(3)  表3:在北京数据集上向现有方法添加多图形设计的效果。在原模型中加入额外的图形，可以显著降低统计误差。<br><img src="AAAI2019GengLWZYYL/r3.png" alt="avatar"><br>进一步研究时间依赖关系建模的影响,我们评估以下的变种ST-MGCN使用不同时序建模方法,包括(1)平均池化:不同时间观察使用平均池化,(2)RNN:聚合时间观察使用递归神经网络(RNN) (3) CG:使用上下文门控但不使用RNN (4) GRNN:不使用图卷积<br>计算结果如表4所示。我们观察到:不同观测值的平均pooling的性能最差，而能够进行内容依赖的非线性时间聚合的RNN的性能得到了明显的改善。基于上下文门控机制的CGRNN得到了比RNN更好的结果。此外，去掉RNN (CG)或图像卷积运算(GRNN)都会导致性能明显变差，这证明了各分量的有效性。</p>
+<ul>
+<li>(4) 表4:时间相关建模对北京数据集的影响<br><img src="AAAI2019GengLWZYYL/r4.png" alt="avatar"></li>
+<li>(5) 图5:图卷积的层数和多项式阶数k对北京数据集的影响。</li>
+</ul>
+<h2 id="相关知识链接"><a href="#相关知识链接" class="headerlink" title="相关知识链接"></a>相关知识链接</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><ul>
+<li>作者个人主页：</li>
+</ul>
+<p><a href="http://www-scf.usc.edu/~yaguang" target="_blank" rel="noopener">http://www-scf.usc.edu/~yaguang</a></p>
+<ul>
+<li>论文地址：</li>
+</ul>
+<p><a href="https://www.aaai.org/ojs/index.php/AAAI/article/view/4247" target="_blank" rel="noopener">https://www.aaai.org/ojs/index.php/AAAI/article/view/4247</a></p>
+<ul>
+<li>ppt：</li>
+</ul>
+<p><a href="http://www-scf.usc.edu/~yaguang/papers/aaai19_multi_graph_convolution_slides.pdf" target="_blank" rel="noopener">http://www-scf.usc.edu/~yaguang/papers/aaai19_multi_graph_convolution_slides.pdf</a></p>
+<ul>
+<li>poster：</li>
+</ul>
+<p><a href="http://www-scf.usc.edu/~yaguang/papers/aaai19_stmgcn_poster.pdf" target="_blank" rel="noopener">http://www-scf.usc.edu/~yaguang/papers/aaai19_stmgcn_poster.pdf</a></p>
+<h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ul>
+<li>郑宇：深度学习在时空数据中的应用</li>
+</ul>
+<p><a href="https://mp.weixin.qq.com/s/GakpFYtiNrVMNjPXUVjn1A" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/GakpFYtiNrVMNjPXUVjn1A</a></p>
+<ul>
+<li>相关论文：Junbo Zhang, Yu Zheng, Dekang Qi. AAAI 2017. Deep Spatio-Temporal Residual Networks for Citywide Crowd Flows Prediction</li>
+</ul>
+<p><a href="https://arxiv.org/abs/1610.00081" target="_blank" rel="noopener">https://arxiv.org/abs/1610.00081</a></p>
+<h3 id="基准实验涉及的论文"><a href="#基准实验涉及的论文" class="headerlink" title="基准实验涉及的论文"></a>基准实验涉及的论文</h3><ul>
+<li>Gradient boosted machine (GBM)<br>Ke, G.; Meng, Q.; Finley, T.; Wang, T.; Chen, W.; Ma, W.; Ye, Q.; and Liu, T.-Y. 2017a. Lightgbm: A highly efficient gradient boosting decision tree. In Advances in Neural In- formation Processing Systems, 3149–3157.</li>
+<li>ST-ResNet<br>Zhang, J.; Zheng, Y.; Qi, D.; Li, R.; Yi, X.; and Li, T. 2018a. Predicting citywide crowd flows using deep spatio-temporal residual networks. Artificial Intelligence 259:147–166.<ul>
+<li>DMVST-Net<br>Yao, H.; Wu, F.; Ke, J.; Tang, X.; Jia, Y.; Lu, S.; Gong, P.; Ye, J.; and Li, Z. 2018b. Deep multi-view spatial-temporal network for taxi demand prediction. In 2018 AAAI Confer- ence on Artificial Intelligence (AAAI’18).</li>
+<li>DCRNN<br>Li, Y.; Yu, R.; Shahabi, C.; and Liu, Y. 2018c. Diffusion convolutional recurrent neural network: Data-driven traffic forecasting. In International Conference on Learning Rep- resentations (ICLR ’18).</li>
+<li>ST-GCN<br>Yu, B.; Yin, H.; and Zhu, Z. 2018. Spatio-temporal graph convolutional networks: A deep learning framework for traf- fic forecasting. In IJCAI’18).</li>
+</ul>
+</li>
+</ul>
+<h3 id="方法组件涉及的论文"><a href="#方法组件涉及的论文" class="headerlink" title="方法组件涉及的论文"></a>方法组件涉及的论文</h3><ul>
+<li>回顾频谱图卷积的经典工作:</li>
+</ul>
+<p>从ChebNet到GCN：<a href="https://www.bilibili.com/read/mobile/2855698" target="_blank" rel="noopener">https://www.bilibili.com/read/mobile/2855698</a></p>
+<h3 id="后续研究涉及的论文"><a href="#后续研究涉及的论文" class="headerlink" title="后续研究涉及的论文"></a>后续研究涉及的论文</h3><p>基于本文的后续研究、引用本文的论文</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文模型应用到了北京和上海的滴滴网约车上，实验部分不再介绍，其中的POI数据，路网数据等感觉处理起来会比较麻烦。</p>
+<p>总的来说，本文就是先提取三张关系图，即三个不同的拉普拉斯矩阵L，再将每张关系图的多个时间步融合为一个时间步，即一张图，融合后得到只含有一个时间步的三张图，对该三张图分别进行图卷积，再将结果进行特征融合即可得到预测值。</p>
+<p>本文提到的 k-order ChebNet 可以进行 k-hop 邻居信息汇聚的方法.</p>
+<h3 id="亮点"><a href="#亮点" class="headerlink" title="亮点"></a>亮点</h3><p>总的来说，本文就是先提取三张关系图，即三个不同的拉普拉斯矩阵L，再将每张关系图的多个时间步融合为一个时间步，即一张图，融合后得到只含有一个时间步的三张图，对该三张图分别进行图卷积，再将结果进行特征融合即可得到预测值。使用CGRNN用于时间相关性建模，同时包含了全局上下文信息。</p>
+<h3 id="不足"><a href="#不足" class="headerlink" title="[不足]"></a>[不足]</h3><p>基于该文章的多图数据融合机制，增加高精度的降水短临预报（例如，提供分钟级、街道级降水预报的彩云天气，<a href="http://caiyunapp.com/" target="_blank" rel="noopener">http://caiyunapp.com/</a> ）可以显著提升订单数的预测准确性。</p>
+<h3 id="启发"><a href="#启发" class="headerlink" title="[启发]"></a>[启发]</h3><p>(1)评估所提出的模型对其他时空预测任务的影响，比如交通流、人流、雾霾预报等，以及提高模型的能力，以满足多个时间步的预测需求。;<br>(2)扩展了多步序列预测方法。</p>
+<h2 id="BibTex"><a href="#BibTex" class="headerlink" title="BibTex"></a>BibTex</h2><pre><code>@inproceedings{DBLP:conf/aaai/GengLWZYYL19,
+  author    = {Xu Geng and
+               Yaguang Li and
+               Leye Wang and
+               Lingyu Zhang and
+               Qiang Yang and
+               Jieping Ye and
+               Yan Liu},
+  title     = {Spatiotemporal Multi-Graph Convolution Network for Ride-Hailing Demand
+               Forecasting},
+  booktitle = {The Thirty-Third {AAAI} Conference on Artificial Intelligence, {AAAI}
+               2019, The Thirty-First Innovative Applications of Artificial Intelligence
+               Conference, {IAAI} 2019, The Ninth {AAAI} Symposium on Educational
+               Advances in Artificial Intelligence, {EAAI} 2019, Honolulu, Hawaii,
+               USA, January 27 - February 1, 2019},
+  pages     = {3656--3663},
+  publisher = {{AAAI} Press},
+  year      = {2019},
+  url       = {https://doi.org/10.1609/aaai.v33i01.33013656},
+  doi       = {10.1609/aaai.v33i01.33013656},
+  timestamp = {Wed, 25 Sep 2019 11:05:08 +0200},
+  biburl    = {https://dblp.org/rec/conf/aaai/GengLWZYYL19.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}</code></pre>
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -527,19 +674,36 @@ f(n) = 2*f(n-1)</code></pre><p>法一：</p>
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
           
-            <div class="post-nepre full next">
+            <div class="post-nepre half previous">
           
-            <a href="/2020/06/15/AAAI2019GengLWZYYL/" rel="next">
+            <a href="/2020/06/15/刷题1/" rel="prev">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/1.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/1.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                刷题1 跳台阶&amp;暴力跳台阶&amp;调整数组顺序</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2019/12/29/191229面经/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/3.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/3.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                刷题1 跳台阶&amp;暴力跳台阶&amp;调整数组顺序</h3>
+                面试基础知识</h3>
                 <hr>
               </div>
             </a>
@@ -563,11 +727,11 @@ f(n) = 2*f(n-1)</code></pre><p>法一：</p>
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/keaidoo/CDN/img/custom/avatar3.jpg" itemprop="image" alt="可爱多" height="70" width="70"></a>
+          <a href="" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/keaidoo/CDN/img/custom/avatar3.jpg" itemprop="image" alt="可1多" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="" itemprop="url" rel="author">可爱多</a>
+            <a href="" itemprop="url" rel="author">可1多</a>
             </h3>
           </div>
         </div>
