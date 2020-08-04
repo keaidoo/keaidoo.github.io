@@ -7,7 +7,7 @@
     
         <title itemprop="name">
             
-                paper_stmgcn |
+                刷题3 剑指 Offer — 动态规划 |
                     
                         可爱多
         </title>
@@ -402,6 +402,30 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
 
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/3.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/3.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      刷题3 剑指 Offer — 动态规划</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="https://cdn.jsdelivr.net/gh/keaidoo/CDN/img/custom/avatar3.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="">可爱多</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-8-2<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
@@ -409,15 +433,65 @@
         <div class="toc"></div>
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
-          <header class="entry-header">
-            <h1 class="entry-title">paper_stmgcn</h1>
-            <p class="entry-census">hojun&nbsp;·&nbsp;2020-6-23&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
-
-            <hr>
-          </header>
-        
         <div class="entry-content">
-          
+          <h3 id="剑指-Offer-10-I-斐波那契数列"><a href="#剑指-Offer-10-I-斐波那契数列" class="headerlink" title="剑指 Offer 10- I. 斐波那契数列"></a>剑指 Offer 10- I. 斐波那契数列</h3><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xslxpr/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xslxpr/</a><br>写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项。斐波那契数列的定义如下：<br>F(0) = 0,   F(1) = 1<br>F(N) = F(N - 1) + F(N - 2), 其中 N &gt; 1.<br>斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。<br>答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。</p>
+<pre><code>var fib = function(n) {
+    let f0 = 0, f1 = 1, fn;
+    if(n&lt;2){
+        return n
+    }
+    for(let i = 2; i&lt;=n ;i++){
+        fn = (f0 + f1) % 1000000007;
+        f0 = f1;
+        f1 = fn;
+    }
+    return fn
+};</code></pre><h3 id="剑指-Offer-42-连续子数组的最大和"><a href="#剑指-Offer-42-连续子数组的最大和" class="headerlink" title="剑指 Offer 42. 连续子数组的最大和"></a>剑指 Offer 42. 连续子数组的最大和</h3><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xsiyed/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xsiyed/</a><br>输入一个整型数组，数组里有正数也有负数。数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。要求时间复杂度为O(n)。</p>
+<pre><code>var maxSubArray = function(nums) {
+    let res = nums[0]
+    for(let i = 1; i&lt;nums.length ;i++){
+        if(nums[i-1]&gt;0){
+            nums[i] += nums[i-1]
+        }else{
+            nums[i] = nums[i] 
+        }
+        res = Math.max(res,nums[i])
+    }
+    return res
+};</code></pre><h3 id="剑指-Offer-47-礼物的最大价值"><a href="#剑指-Offer-47-礼物的最大价值" class="headerlink" title="剑指 Offer 47. 礼物的最大价值"></a>剑指 Offer 47. 礼物的最大价值</h3><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xstkx3/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xstkx3/</a><br>在一个 m*n 的棋盘的每一格都放有一个礼物，每个礼物都有一定的价值（价值大于 0）。你可以从棋盘的左上角开始拿格子里的礼物，并每次向右或者向下移动一格、直到到达棋盘的右下角。给定一个棋盘及其上面的礼物的价值，请计算你最多能拿到多少价值的礼物？</p>
+<pre><code>var maxValue = function(grid) {
+    let col = grid.length;
+    let row = grid[0].length;
+     for(let i = 0; i&lt;col ;i++){
+        for(let j = 0; j&lt;row ; j++){
+            if(i &gt;= 1 &amp;&amp; j &gt;= 1){
+                grid[i][j] += Math.max(grid[i-1][j],grid[i][j-1]);
+            }else if(i &gt;= 1){
+                grid[i][j] += grid[i-1][j];
+            }else if(j &gt;= 1){
+                grid[i][j] += grid[i][j-1];
+            }
+        }
+    }
+    return grid[col-1][row-1];
+};</code></pre><pre><code>var maxValue = function(grid) {
+    let col = grid.length;
+    let row = grid[0].length;
+       for(let i = 0; i&lt;col ;i++){
+        for(let j = 0; j&lt;row ; j++){
+             if(i == 0 &amp;&amp; j==0){
+                continue;
+            }else if(i == 0){
+                grid[i][j] += grid[i][j-1];
+            }else if(j==0){
+                grid[i][j] += grid[i-1][j];
+            }else {
+                grid[i][j] += Math.max(grid[i-1][j],grid[i][j-1]);
+            }
+        }
+    }
+    return grid[col-1][row-1];
+};</code></pre>
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -444,11 +518,28 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/08/03/刷题4/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/4.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/4.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                刷题4 剑指 Offer — BFS</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
         
           
-            <div class="post-nepre full next">
+            <div class="post-nepre half next">
           
-            <a href="/2020/06/15/刷题1/" rel="next">
+            <a href="/2020/06/15/AAAI2019GengLWZYYL/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/1.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/1.jpg">
               </div>
@@ -456,7 +547,7 @@
               Next Post</span>
               <div class="info">
                 <h3>
-                刷题1 跳台阶&amp;暴力跳台阶&amp;调整数组顺序</h3>
+                论文解读 | 基于时空多图卷积的交通流量预测</h3>
                 <hr>
               </div>
             </a>
@@ -480,16 +571,16 @@
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="hojun.cn" class="profile gravatar"><img src="https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg" itemprop="image" alt="hojun" height="70" width="70"></a>
+          <a href="" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/keaidoo/CDN/img/custom/avatar3.jpg" itemprop="image" alt="可爱多" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="hojun.cn" itemprop="url" rel="author">hojun</a>
+            <a href="" itemprop="url" rel="author">可爱多</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
+        <p><i class="iconfont icon-write"></i>喜爱一切可爱的事物～</p>
       </section>
     </main><!-- #main -->
   </div><!-- #primary -->
