@@ -434,7 +434,7 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h3 id="剑指-Offer-10-I-斐波那契数列"><a href="#剑指-Offer-10-I-斐波那契数列" class="headerlink" title="剑指 Offer 10- I. 斐波那契数列"></a>剑指 Offer 10- I. 斐波那契数列</h3><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xslxpr/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xslxpr/</a><br>写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项。斐波那契数列的定义如下：<br>F(0) = 0,   F(1) = 1<br>F(N) = F(N - 1) + F(N - 2), 其中 N &gt; 1.<br>斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。<br>答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。</p>
+          <h2 id="剑指-Offer-10-I-斐波那契数列"><a href="#剑指-Offer-10-I-斐波那契数列" class="headerlink" title="剑指 Offer 10- I. 斐波那契数列"></a>剑指 Offer 10- I. 斐波那契数列</h2><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xslxpr/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xslxpr/</a><br>写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项。斐波那契数列的定义如下：<br>F(0) = 0,   F(1) = 1<br>F(N) = F(N - 1) + F(N - 2), 其中 N &gt; 1.<br>斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。<br>答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。</p>
 <pre><code>var fib = function(n) {
     let f0 = 0, f1 = 1, fn;
     if(n&lt;2){
@@ -446,7 +446,7 @@
         f1 = fn;
     }
     return fn
-};</code></pre><h3 id="剑指-Offer-42-连续子数组的最大和"><a href="#剑指-Offer-42-连续子数组的最大和" class="headerlink" title="剑指 Offer 42. 连续子数组的最大和"></a>剑指 Offer 42. 连续子数组的最大和</h3><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xsiyed/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xsiyed/</a><br>输入一个整型数组，数组里有正数也有负数。数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。要求时间复杂度为O(n)。</p>
+};</code></pre><h2 id="剑指-Offer-42-连续子数组的最大和"><a href="#剑指-Offer-42-连续子数组的最大和" class="headerlink" title="剑指 Offer 42. 连续子数组的最大和"></a>剑指 Offer 42. 连续子数组的最大和</h2><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xsiyed/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xsiyed/</a><br>输入一个整型数组，数组里有正数也有负数。数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。要求时间复杂度为O(n)。</p>
 <pre><code>var maxSubArray = function(nums) {
     let res = nums[0]
     for(let i = 1; i&lt;nums.length ;i++){
@@ -458,7 +458,7 @@
         res = Math.max(res,nums[i])
     }
     return res
-};</code></pre><h3 id="剑指-Offer-47-礼物的最大价值"><a href="#剑指-Offer-47-礼物的最大价值" class="headerlink" title="剑指 Offer 47. 礼物的最大价值"></a>剑指 Offer 47. 礼物的最大价值</h3><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xstkx3/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xstkx3/</a><br>在一个 m*n 的棋盘的每一格都放有一个礼物，每个礼物都有一定的价值（价值大于 0）。你可以从棋盘的左上角开始拿格子里的礼物，并每次向右或者向下移动一格、直到到达棋盘的右下角。给定一个棋盘及其上面的礼物的价值，请计算你最多能拿到多少价值的礼物？</p>
+};</code></pre><h2 id="剑指-Offer-47-礼物的最大价值"><a href="#剑指-Offer-47-礼物的最大价值" class="headerlink" title="剑指 Offer 47. 礼物的最大价值"></a>剑指 Offer 47. 礼物的最大价值</h2><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xstkx3/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xstkx3/</a><br>在一个 m*n 的棋盘的每一格都放有一个礼物，每个礼物都有一定的价值（价值大于 0）。你可以从棋盘的左上角开始拿格子里的礼物，并每次向右或者向下移动一格、直到到达棋盘的右下角。给定一个棋盘及其上面的礼物的价值，请计算你最多能拿到多少价值的礼物？</p>
 <pre><code>var maxValue = function(grid) {
     let col = grid.length;
     let row = grid[0].length;

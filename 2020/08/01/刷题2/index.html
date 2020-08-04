@@ -434,7 +434,7 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h3 id="剑指-Offer-04-二维数组中的查找"><a href="#剑指-Offer-04-二维数组中的查找" class="headerlink" title="剑指 Offer 04. 二维数组中的查找"></a>剑指 Offer 04. 二维数组中的查找</h3><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz2hh7/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz2hh7/</a></p>
+          <h2 id="剑指-Offer-04-二维数组中的查找"><a href="#剑指-Offer-04-二维数组中的查找" class="headerlink" title="剑指 Offer 04. 二维数组中的查找"></a>剑指 Offer 04. 二维数组中的查找</h2><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz2hh7/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz2hh7/</a></p>
 <pre><code>var findNumberIn2DArray = function(matrix, target) {
     let col = matrix.length;
     if(!col) return false
@@ -450,7 +450,7 @@
          }
     }
     return false;
-};</code></pre><h3 id="剑指-Offer-05-替换空格"><a href="#剑指-Offer-05-替换空格" class="headerlink" title="剑指 Offer 05. 替换空格"></a>剑指 Offer 05. 替换空格</h3><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz2cf5/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz2cf5/</a></p>
+};</code></pre><h2 id="剑指-Offer-05-替换空格"><a href="#剑指-Offer-05-替换空格" class="headerlink" title="剑指 Offer 05. 替换空格"></a>剑指 Offer 05. 替换空格</h2><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz2cf5/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz2cf5/</a></p>
 <pre><code>var replaceSpace = function(s) {
  return s.split(&#39; &#39;).join(&#39;%20&#39;)
 };</code></pre><pre><code>//数组
@@ -464,7 +464,7 @@ var replaceSpace = function(s) {
         }
     }
     return res
-};</code></pre><h3 id="剑指-Offer-17-打印从-1-到最大的-n-位数"><a href="#剑指-Offer-17-打印从-1-到最大的-n-位数" class="headerlink" title="剑指 Offer 17. 打印从 1 到最大的 n 位数"></a>剑指 Offer 17. 打印从 1 到最大的 n 位数</h3><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xzvgc2/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xzvgc2/</a></p>
+};</code></pre><h2 id="剑指-Offer-17-打印从-1-到最大的-n-位数"><a href="#剑指-Offer-17-打印从-1-到最大的-n-位数" class="headerlink" title="剑指 Offer 17. 打印从 1 到最大的 n 位数"></a>剑指 Offer 17. 打印从 1 到最大的 n 位数</h2><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xzvgc2/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xzvgc2/</a></p>
 <pre><code>var printNumbers = function(n) {
     if(n==0){
         return false;
@@ -479,7 +479,7 @@ var replaceSpace = function(s) {
         arr.push(i)
     }
 return arr;
-};</code></pre><h3 id="剑指-Offer-21-调整数组顺序使奇数位于偶数前面"><a href="#剑指-Offer-21-调整数组顺序使奇数位于偶数前面" class="headerlink" title="剑指 Offer 21. 调整数组顺序使奇数位于偶数前面"></a>剑指 Offer 21. 调整数组顺序使奇数位于偶数前面</h3><pre><code>var exchange = function(nums) {
+};</code></pre><h2 id="剑指-Offer-21-调整数组顺序使奇数位于偶数前面"><a href="#剑指-Offer-21-调整数组顺序使奇数位于偶数前面" class="headerlink" title="剑指 Offer 21. 调整数组顺序使奇数位于偶数前面"></a>剑指 Offer 21. 调整数组顺序使奇数位于偶数前面</h2><pre><code>var exchange = function(nums) {
   var a = [];
     var b = [];
     for(var i=0;i&lt;nums.length;i++){
@@ -492,6 +492,7 @@ return arr;
     return a.concat(b)
 };</code></pre><blockquote>
 <p>双指针</p>
+</blockquote>
 <pre><code>var exchange = function(nums) {
     let right = nums.length-1;
     let left = 0;
@@ -508,23 +509,55 @@ return arr;
     nums[right] = tmp 
     }
   return nums  
-};</code></pre></blockquote>
-<h3 id="剑指-Offer-39-数组中出现次数超过一半的数字"><a href="#剑指-Offer-39-数组中出现次数超过一半的数字" class="headerlink" title="剑指 Offer 39. 数组中出现次数超过一半的数字"></a>剑指 Offer 39. 数组中出现次数超过一半的数字</h3><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz7dgg/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz7dgg/</a></p>
+};</code></pre><h2 id="剑指-Offer-39-数组中出现次数超过一半的数字"><a href="#剑指-Offer-39-数组中出现次数超过一半的数字" class="headerlink" title="剑指 Offer 39. 数组中出现次数超过一半的数字"></a>剑指 Offer 39. 数组中出现次数超过一半的数字</h2><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz7dgg/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz7dgg/</a></p>
 <blockquote>
 <p>方法一：数组排序：首先将 nums 排序，由于该数字超过数组长度的一半，所以数组的中间元素就是答案，时间复杂度为 O(nlogn)</p>
+</blockquote>
 <pre><code>var majorityElement = function(nums) {
     nums.sort((a,b) =&gt; a-b)
     return nums[parseInt(nums.length / 2 )]  
-}</code></pre><p>方法一：哈希计数：遍历 nums 数组，将数字存在 HashMap 中，统计数字出现次数，统计完成后再遍历一次 HashMap，找到超过一半计数的数字，时间复杂度为 O(n)</p>
-<pre><code></code></pre></blockquote>
-<pre><code>&gt; 摩尔投票：遍历 nums 数组，使用 count 进行计数，记录当前出现的数字为 cur，如果遍历到的 num 与 cur 相等，则 count 自增，否则自减，当其减为 0 时则将 cur 修改为当前遍历的 num，通过增减抵消的方式，最终达到剩下的数字是结果的效果，时间复杂度为 O(n)
-&gt; - 摩尔投票是最优解法，时间复杂度：O(n)，空间复杂度：O(1)</code></pre><p>var majorityElement = function(nums) {<br>    let cur ,count=0;<br>    for(let i = 0; i&lt;nums.length; i++){<br>        if(count == 0){<br>            cur = nums[i];<br>        }<br>        if(nums[i]  == cur){<br>            count++;<br>        }else{<br>            count–<br>        }<br>    }<br>    return cur<br>}</p>
-<pre><code>### 剑指 Offer 57. 和为 s 的两个数字
-[https://leetcode-cn.com/leetbook/read/illustrate-lcof/xzimqj/](https://leetcode-cn.com/leetbook/read/illustrate-lcof/xzimqj/)
-输入一个递增排序的数组和一个数字s，在数组中查找两个数，使得它们的和正好是s。如果有多对数字的和等于s，则输出任意一对即可。
-思路：有序数组，双指针
-</code></pre><p>var twoSum = function(nums, target) {<br>    var len = nums.length;<br>    var left = 0;<br>    var right = len-1;<br>    var arr = []<br>    for(var i = 0; i&lt;len ;i++){<br>        if(nums[left]+nums[right] == target){<br>            //  arr.push(nums[left]);<br>            // arr.push(nums[right])<br>            return  [nums[left],nums[right]]<br>        };<br>        if(nums[left]+nums[right] &gt; target){<br>            right–<br>        }<br>        if(nums[left]+nums[right] &lt; target){<br>            left++<br>        }<br>    }<br>};<br>```</p>
-
+}</code></pre><blockquote>
+<p>方法一：哈希计数：遍历 nums 数组，将数字存在 HashMap 中，统计数字出现次数，统计完成后再遍历一次 HashMap，找到超过一半计数的数字，时间复杂度为 O(n)</p>
+</blockquote>
+<pre><code></code></pre><blockquote>
+<p>摩尔投票：遍历 nums 数组，使用 count 进行计数，记录当前出现的数字为 cur，如果遍历到的 num 与 cur 相等，则 count 自增，否则自减，当其减为 0 时则将 cur 修改为当前遍历的 num，通过增减抵消的方式，最终达到剩下的数字是结果的效果，时间复杂度为 O(n)</p>
+<ul>
+<li>摩尔投票是最优解法，时间复杂度：O(n)，空间复杂度：O(1)</li>
+</ul>
+</blockquote>
+<pre><code>var majorityElement = function(nums) {
+    let cur ,count=0;
+    for(let i = 0; i&lt;nums.length; i++){
+        if(count == 0){
+            cur = nums[i];  
+        }
+        if(nums[i]  == cur){
+            count++;
+        }else{
+            count--
+        }
+    }
+    return cur
+}</code></pre><h2 id="剑指-Offer-57-和为-s-的两个数字"><a href="#剑指-Offer-57-和为-s-的两个数字" class="headerlink" title="剑指 Offer 57. 和为 s 的两个数字"></a>剑指 Offer 57. 和为 s 的两个数字</h2><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xzimqj/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xzimqj/</a><br>输入一个递增排序的数组和一个数字s，在数组中查找两个数，使得它们的和正好是s。如果有多对数字的和等于s，则输出任意一对即可。<br>思路：有序数组，双指针</p>
+<pre><code>var twoSum = function(nums, target) {
+    var len = nums.length;
+    var left = 0;
+    var right = len-1;
+    var arr = []
+    for(var i = 0; i&lt;len ;i++){
+        if(nums[left]+nums[right] == target){
+            //  arr.push(nums[left]);
+            // arr.push(nums[right]) 
+            return  [nums[left],nums[right]]
+        };
+        if(nums[left]+nums[right] &gt; target){
+            right--
+        }
+        if(nums[left]+nums[right] &lt; target){
+            left++
+        }
+    }
+};</code></pre>
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -572,7 +605,7 @@ return arr;
           
             <div class="post-nepre half next">
           
-            <a href="/2020/06/15/刷题1/" rel="next">
+            <a href="/2020/06/15/AAAI2019GengLWZYYL/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/1.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/keaidoo/cdn@1.2/img/custom/paperPhoto/1.jpg">
               </div>
@@ -580,7 +613,7 @@ return arr;
               Next Post</span>
               <div class="info">
                 <h3>
-                刷题1 跳台阶&amp;暴力跳台阶&amp;调整数组顺序</h3>
+                论文解读 | 基于时空多图卷积的交通流量预测</h3>
                 <hr>
               </div>
             </a>
