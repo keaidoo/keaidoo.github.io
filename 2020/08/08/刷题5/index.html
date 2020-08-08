@@ -436,7 +436,8 @@
         <div class="entry-content">
           <h2 id="剑指-Offer-06-从尾到头打印链表"><a href="#剑指-Offer-06-从尾到头打印链表" class="headerlink" title="剑指 Offer 06. 从尾到头打印链表"></a>剑指 Offer 06. 从尾到头打印链表</h2><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xs92sh/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xs92sh/</a></p>
 <ul>
-<li>方法一：reverse()<pre><code>var reversePrint = function(head) {
+<li><p>方法一：reverse()</p>
+<pre><code>var reversePrint = function(head) {
   var stack = [];
   while(head != null){
       stack.push(head.val);
@@ -444,7 +445,8 @@
   }
   //return stack.reverse()
 };</code></pre></li>
-<li>方法二：栈（先进后出，push+pop）<pre><code>var reversePrint = function(head) {
+<li><p>方法二：栈（先进后出，push+pop）</p>
+<pre><code>var reversePrint = function(head) {
   var stack = [];
   while(head != null){
       stack.push(head.val);
@@ -456,8 +458,9 @@
       res.push(stack.pop()); //stack长度会不断变化
   }
   return res;
-};</code></pre><h2 id="剑指-Offer-09-用两个栈实现队列"><a href="#剑指-Offer-09-用两个栈实现队列" class="headerlink" title="剑指 Offer 09. 用两个栈实现队列"></a>剑指 Offer 09. 用两个栈实现队列</h2><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz8cid/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz8cid/</a></li>
+};</code></pre></li>
 </ul>
+<h2 id="剑指-Offer-09-用两个栈实现队列"><a href="#剑指-Offer-09-用两个栈实现队列" class="headerlink" title="剑指 Offer 09. 用两个栈实现队列"></a>剑指 Offer 09. 用两个栈实现队列</h2><p><a href="https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz8cid/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz8cid/</a></p>
 <pre><code>var CQueue = function() {
     this.stack1=[];
     this.stack2 = [];
